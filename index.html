@@ -253,8 +253,8 @@
                 </div>
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
-                <button class="btn bgh" style="width:100%;font-size:13px" onclick="exportJSON()">💾 Exportar progreso (.json)</button>
-                <button class="btn bgh" style="width:100%;font-size:13px" onclick="importJSON()">📥 Restaurar progreso (.json)</button>
+                <button class="btn bg" style="width:100%;font-size:13px" onclick="exportMD()">💾 Guardar progreso (.md)</button>
+                <button class="btn bgh" style="width:100%;font-size:13px" onclick="importMD()">📥 Restaurar progreso (.md / .json)</button>
             </div>
         </div>
 
@@ -292,9 +292,8 @@
             <div class="aw">
                 <label>Modo de preguntas</label>
                 <select class="ai" id="cfprov" onchange="toggleKeyField()">
-                    <option value="claude" selected>🤖 Claude IA (personaliza según debilidades)</option>
-                    <option value="local">📦 Banco Local (100+ preguntas, sin internet)</option>
-                    <option value="external">🔑 API Key externa (Groq, OpenRouter, etc)</option>
+                    <option value="local" selected>📦 Banco Local (sin internet, funciona siempre)</option>
+                    <option value="external">🤖 IA con Groq (gratis) u OpenRouter</option>
                 </select>
                 <div style="margin-top:6px;font-size:11px;line-height:1.6;padding:8px 12px;border-radius:8px" id="provider-info"></div>
             </div>
@@ -649,7 +648,7 @@
     const TITLES=['Estudiante de Guardia','Practicante Prometedor','Médico en Formación','Residente Teórico','Clínico en Ascenso','Especialista Emergente','Maestro del SERUMS','Leyenda Médica'];
     const AVTS={'⚔️ Clínico Guerrero':'⚔️','🧙 Bioquímico Mago':'🧙','🛡️ Internista Tanque':'🛡️','🏹 Epidemiólogo Ranger':'🏹'};
 
-    let S={name:'Blanc',class:'⚔️ Clínico Guerrero',level:1,xp:0,xpNext:500,sessions:0,streak:0,pomodoros:0,totalCorrect:0,totalAnswered:0,apiKey:'',provider:'claude',missionsProgress:{},debilidades:[],wrongAnswers:[],topicStats:{},socWeaknesses:[],mentalModels:[]};
+    let S={name:'Blanc',class:'⚔️ Clínico Guerrero',level:1,xp:0,xpNext:500,sessions:0,streak:0,pomodoros:0,totalCorrect:0,totalAnswered:0,apiKey:'',provider:'local',missionsProgress:{},debilidades:[],wrongAnswers:[],topicStats:{},socWeaknesses:[],mentalModels:[]};
     const LS=()=>{try{const s=localStorage.getItem('mrpg3');if(s)S={...S,...JSON.parse(s)};if(!S.wrongAnswers)S.wrongAnswers=[];if(!S.topicStats)S.topicStats={};if(!S.socWeaknesses)S.socWeaknesses=[];if(!S.mentalModels)S.mentalModels=[];}catch(e){}};
     const SS=()=>{try{localStorage.setItem('mrpg3',JSON.stringify(S))}catch(e){}};
 
@@ -685,21 +684,18 @@
 
     function addXP(n){if(!n)return;S.xp+=n;while(S.xp>=S.xpNext){S.xp-=S.xpNext;S.level++;S.xpNext=S.level*500;toast('🎉 NIVEL '+S.level);}SS();updUI();const p=document.getElementById('xpp');p.textContent='+'+n+' XP';p.classList.remove('show');void p.offsetWidth;p.classList.add('show');}
 
-    function saveCfg(){S.name=document.getElementById('cfn').value||'Blanc';S.class=document.getElementById('cfc').value;S.provider=document.getElementById('cfprov').value;S.apiKey=document.getElementById('cfk').value;SS();updUI();toast('✅ Guardado');}
+    function saveCfg(){S.name=document.getElementById('cfn').value||'Blanc';S.class=document.getElementById('cfc').value;const pv=document.getElementById('cfprov').value;S.provider=(pv==='claude'?'local':pv);S.apiKey=document.getElementById('cfk').value;SS();updUI();toast('✅ Guardado');}
 
     function toggleKeyField(){
       const p=document.getElementById('cfprov').value;
       document.getElementById('key-section').style.display=p==='external'?'block':'none';
       const info=document.getElementById('provider-info');
-      if(p==='claude'){
-        info.style.background='rgba(74,222,128,0.08)';info.style.border='1px solid rgba(74,222,128,0.2)';info.style.color='var(--green)';
-        info.innerHTML='✅ <strong>Listo</strong> — Claude genera preguntas personalizadas según tus debilidades de Obsidian. Sin API key. Si falla la conexión, usa el banco local como respaldo.';
-      }else if(p==='local'){
+      if(p==='local'){
         info.style.background='rgba(78,236,216,0.08)';info.style.border='1px solid rgba(78,236,216,0.2)';info.style.color='var(--cyan)';
-        info.innerHTML='📦 <strong>Offline</strong> — 100+ preguntas SERUMS integradas. Funciona sin internet.';
+        info.innerHTML='📦 <strong>Funciona siempre</strong> — 300+ preguntas reales ENCAPS integradas. Sin internet. Default recomendado para GitHub Pages.';
       }else{
         info.style.background='rgba(167,139,250,0.08)';info.style.border='1px solid rgba(167,139,250,0.2)';info.style.color='var(--purple)';
-        info.innerHTML='🔑 Necesitas una API key gratuita de Groq o OpenRouter.';
+        info.innerHTML='🤖 <strong>IA personalizada</strong> — Necesitas una API key gratuita. <a href="https://console.groq.com/keys" target="_blank" style="color:var(--cyan)">Groq (gratis)</a>: crea cuenta → API Keys → pega aquí.';
       }
     }
 
@@ -1893,10 +1889,8 @@
           let tx;
           if(useExternal){
             tx=await callAI(pr,k);
-          }else if(isWebView&&!k){
-            throw new Error('Sin API key. Config → API Key externa → Groq gratis');
           }else{
-            tx=await callClaudeBuiltin(pr);
+            throw new Error('Sin API key. Ve a Configuración → selecciona "IA con Groq" → pega tu key gratuita de console.groq.com');
           }
           if(!tx)throw new Error('Respuesta vacía');
           // Extract JSON
@@ -2239,7 +2233,7 @@
           // Show error PERSISTENTLY so user can read it
           console.warn('IA falló:',e.message);
           const errMsg=e.message||'Error desconocido';
-          const provInfo=S.provider==='external'?`Proveedor: ${detectProvider(k)} | Key: ${k?k.slice(0,8)+'...':'NO HAY KEY'}`:'Modo: Claude (solo funciona en claude.ai)';
+          const provInfo=`Proveedor: ${detectProvider(k)||'ninguno'} | Key: ${k?k.slice(0,8)+'...':'NO HAY KEY — Ve a Configuración → IA con Groq'}`;
           document.getElementById('mcont').innerHTML=`<div class="card" style="text-align:center">
             <div style="font-size:32px;margin-bottom:12px">⚠️</div>
             <div style="font-weight:600;margin-bottom:8px;color:var(--orange)">IA no pudo generar</div>
@@ -2598,8 +2592,113 @@
       toast('❌ '+ac.length+' puntos débiles cargados');
     }
 
-    function exportJSON(){const b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='medrpg-'+new Date().toISOString().split('T')[0]+'.json';a.click();toast('💾 Exportado');}
-    function importJSON(){const inp=document.createElement('input');inp.type='file';inp.accept='.json';inp.onchange=async e=>{try{const tx=await e.target.files[0].text();S={...S,...JSON.parse(tx)};SS();updUI();document.getElementById('cfn').value=S.name;document.getElementById('cfc').value=S.class;syncSt('ok','Nivel '+S.level+' restaurado');toast('✅ Restaurado');}catch(er){toast('⚠️ Error: '+er.message);}};inp.click();}
+    function renderMissionsForMD(){
+      let lines=[];
+      MISSIONS.forEach(m=>{
+        const pr=S.missionsProgress[m.id]||{};
+        lines.push('### '+m.icon+' '+m.name);
+        m.dungeons.forEach((d,i)=>{lines.push('- ['+(pr[i]?'x':' ')+'] '+d);});
+        lines.push('');
+      });
+      return lines.join('\n');
+    }
+
+    function exportMD(){
+      const date=new Date().toISOString().split('T')[0];
+      const acc=S.totalAnswered>0?Math.round(S.totalCorrect/S.totalAnswered*100):0;
+      const debLines=(S.debilidades||[]).length>0
+        ?(S.debilidades.map(d=>'| '+d.concepto+' | '+d.error+' | '+(d.estado||'Activo')+' |').join('\n'))
+        :'| (sin errores registrados) | — | — |';
+      const md=[
+        '---',
+        'nombre: '+S.name,
+        'clase: '+S.class,
+        'nivel: '+S.level,
+        'xp_total: '+S.xp,
+        'xp_siguiente_nivel: '+S.xpNext,
+        'racha_dias: '+S.streak,
+        'sesiones: '+S.sessions,
+        'pomodoros: '+S.pomodoros,
+        '---',
+        '',
+        '# MedRPG — '+S.name+' · Nivel '+S.level,
+        '',
+        '> Guardado: '+date+' · XP: '+S.xp+'/'+S.xpNext+' · Precisión: '+acc+'% · Racha: '+S.streak+' días',
+        '',
+        '## Estadísticas',
+        '- Nivel: '+S.level,
+        '- XP: '+S.xp+' / '+S.xpNext,
+        '- Precisión global: '+acc+'% ('+S.totalCorrect+'/'+S.totalAnswered+')',
+        '- Sesiones: '+S.sessions,
+        '- Pomodoros: '+S.pomodoros,
+        '- Racha: '+S.streak+' días',
+        '',
+        '## Misiones',
+        '',
+        renderMissionsForMD(),
+        '## Puntos Débiles',
+        '',
+        '| Concepto | Error | Estado |',
+        '|---|---|---|',
+        debLines,
+        '',
+        '## Backup completo (no editar esta sección)',
+        '',
+        '```json',
+        JSON.stringify(S,null,2),
+        '```',
+        ''
+      ].join('\n');
+      const b=new Blob([md],{type:'text/markdown'});
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(b);
+      a.download='personaje-medrpg-'+date+'.md';
+      a.click();
+      toast('💾 Progreso guardado como .md');
+    }
+
+    function importMD(){
+      const inp=document.createElement('input');
+      inp.type='file';
+      inp.accept='.md,.markdown,.json';
+      inp.onchange=async e=>{
+        try{
+          const file=e.target.files[0];
+          const tx=await file.text();
+          const fn=file.name;
+          // Intenta extraer JSON del bloque de backup (restauración completa)
+          const jsonMatch=tx.match(/```json\s*([\s\S]*?)```/);
+          if(jsonMatch){
+            const parsed=JSON.parse(jsonMatch[1].trim());
+            S={...S,...parsed};
+            // Normalizar provider si venía de versión antigua con 'claude'
+            if(S.provider==='claude')S.provider='local';
+            SS();updUI();
+            document.getElementById('cfn').value=S.name;
+            document.getElementById('cfc').value=S.class;
+            document.getElementById('cfk').value=S.apiKey||'';
+            document.getElementById('cfprov').value=(S.provider==='claude'?'local':S.provider)||'local';
+            toggleKeyField();
+            syncSt('ok','Nivel '+S.level+' restaurado');
+            toast('✅ Progreso restaurado — Nivel '+S.level);
+          }else if(fn.endsWith('.json')){
+            // JSON directo (compatibilidad con exportaciones antiguas)
+            const parsed=JSON.parse(tx);
+            S={...S,...parsed};
+            if(S.provider==='claude')S.provider='local';
+            SS();updUI();
+            document.getElementById('cfn').value=S.name;
+            document.getElementById('cfc').value=S.class;
+            syncSt('ok','Nivel '+S.level+' restaurado');
+            toast('✅ Restaurado desde JSON');
+          }else{
+            // Fallback: parsers originales (personaje.md, misiones.md, etc.)
+            route(fn,tx);
+          }
+        }catch(er){toast('⚠️ Error al importar: '+er.message);}
+      };
+      inp.click();
+    }
 
     // ===================== GITHUB SYNC =====================
     function setSyncTab(tab){
@@ -3586,7 +3685,7 @@
       document.getElementById('cfn').value=S.name;
       document.getElementById('cfc').value=S.class;
       document.getElementById('cfk').value=S.apiKey||'';
-      document.getElementById('cfprov').value=S.provider||'claude';
+      document.getElementById('cfprov').value=(S.provider==='claude'?'local':S.provider)||'local';
       toggleKeyField();
       updUI();updT();
       if(S.level>1||S.xp>0)syncSt('ok','Datos cargados — Nivel '+S.level+', '+S.xp+' XP');

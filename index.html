@@ -182,6 +182,15 @@
         .soc-typing span{width:5px;height:5px;border-radius:50%;background:var(--purple);opacity:0.4;animation:socDot 1.2s infinite}
         .soc-typing span:nth-child(2){animation-delay:.2s}.soc-typing span:nth-child(3){animation-delay:.4s}
         @keyframes socDot{0%,100%{opacity:0.4;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+        /* ── RPG MAP ── */
+        @keyframes charBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+        @keyframes pathPulse{0%,100%{opacity:0.9}50%{opacity:0.5}}
+        .rpg-map-wrap{position:relative;background:#080E1C;border-radius:16px;overflow:hidden;margin-bottom:12px}
+        .rpg-map-wrap svg{width:100%;height:auto;display:block;max-height:55vw;min-height:180px}
+        .map-node{cursor:pointer;transition:transform .12s}.map-node:hover{transform:scale(1.25)}
+        .rpg-adv-btn{width:100%;padding:11px;background:linear-gradient(180deg,#E84020,#A82C10);border:none;border-bottom:4px solid #6A1A08;color:#fff;font-family:'Press Start 2P',monospace;font-size:8px;cursor:pointer;border-radius:0 0 12px 12px;letter-spacing:1px;transition:all .1s}
+        .rpg-adv-btn:hover{background:linear-gradient(180deg,#FF5030,#C83820)}.rpg-adv-btn:active{transform:translateY(3px);border-bottom-width:1px}
+        .rpg-adv-btn:disabled{opacity:.4;cursor:not-allowed}
         .gap-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.25);border-radius:6px;padding:2px 7px;font-size:9px;font-weight:600;color:var(--orange);margin-bottom:6px}
     </style>
 </head>
@@ -320,6 +329,102 @@
             </div>
             <div class="xpb" style="margin-top:10px"><div class="xpf" id="tf2" style="width:0%;background:linear-gradient(90deg,var(--cyan2),var(--cyan))"></div></div>
         </div>
+        <!-- ── RPG OVERWORLD MAP ── -->
+<div class="rpg-map-wrap card" id="rpg-map-card" style="padding:0;border-color:var(--gold);background:linear-gradient(135deg,#04080F,#0C1C38)">
+  <div style="padding:10px 14px 6px;display:flex;justify-content:space-between;align-items:center">
+    <span style="font-family:'Press Start 2P',monospace;font-size:7px;color:var(--gold)">⚕ MAPA RPG — SERUMS 2026</span>
+    <span style="font-family:'Press Start 2P',monospace;font-size:7px;color:var(--cyan)" id="rpg-prog-label">0%</span>
+  </div>
+  <svg id="rpg-svg" viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="rpg-bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#04080F"/><stop offset="55%" stop-color="#0C1C38"/><stop offset="100%" stop-color="#0E2010"/>
+      </linearGradient>
+      <filter id="rpg-glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="rpg-gold" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="4" result="b"/>
+        <feColorMatrix in="b" values="1.2 1 0 0 0  0.9 0.8 0 0 0  0 0 0 0 0  0 0 0 0.8 0" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="rpg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.6"/>
+      </filter>
+    </defs>
+    <rect width="860" height="460" fill="url(#rpg-bg)"/>
+    <!-- Estrellas -->
+    <g id="rpg-stars"></g>
+    <!-- Terrenos -->
+    <ellipse cx="155" cy="415" rx="118" ry="50" fill="#3A7020" opacity="0.45"/>
+    <ellipse cx="310" cy="300" rx="100" ry="62" fill="#2E6018" opacity="0.45"/>
+    <ellipse cx="478" cy="255" rx="100" ry="58" fill="#1A4818" opacity="0.58"/>
+    <ellipse cx="618" cy="185" rx="78" ry="50" fill="#5A3818" opacity="0.5"/>
+    <ellipse cx="700" cy="128" rx="55" ry="40" fill="#8A6018" opacity="0.46"/>
+    <ellipse cx="778" cy="68" rx="65" ry="44" fill="#7AAACE" opacity="0.25"/>
+    <!-- Nieve pico -->
+    <polygon points="746,44 780,20 814,44" fill="white" opacity="0.8"/>
+    <polygon points="754,47 780,28 806,47" fill="#D8F0FF" opacity="0.55"/>
+    <!-- Casitas Z1 -->
+    <rect x="82" y="435" width="11" height="11" fill="#C8904A"/><polygon points="82,435 87.5,427 93,435" fill="#A07030"/>
+    <rect x="100" y="432" width="11" height="11" fill="#C8904A"/><polygon points="100,432 105.5,424 111,432" fill="#A07030"/>
+    <!-- Árboles Z3 -->
+    <polygon points="420,250 411,265 429,265" fill="#1A5020"/><polygon points="420,242 413,252 427,252" fill="#2A7832"/><rect x="418" y="265" width="4" height="7" fill="#5A3010"/>
+    <polygon points="440,262 431,277 449,277" fill="#1A5020"/><polygon points="440,254 433,264 447,264" fill="#2A7832"/>
+    <!-- Templo Z5 -->
+    <rect x="693" y="108" width="28" height="18" fill="#C89030"/><polygon points="693,108 707,97 721,108" fill="#D8A840"/>
+    <rect x="701" y="117" width="13" height="9" fill="#5A3010"/>
+    <!-- Zona labels -->
+    <text x="155" y="452" text-anchor="middle" fill="#8FD44A" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Valle del Saber</text>
+    <text x="310" y="338" text-anchor="middle" fill="#A0D860" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Altiplano Epid.</text>
+    <text x="478" y="293" text-anchor="middle" fill="#60C880" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Selva Clínica</text>
+    <text x="618" y="222" text-anchor="middle" fill="#E8C460" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Ciudadela Gestión</text>
+    <text x="700" y="158" text-anchor="middle" fill="#ECA840" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Santuario</text>
+    <text x="778" y="104" text-anchor="middle" fill="#C8E8FF" opacity="0.85" font-size="7.5" font-family="'Press Start 2P',monospace" stroke="#04080F" stroke-width="2" paint-order="stroke">Cima ENCAPS</text>
+    <!-- Camino base -->
+    <path id="rpg-path-base" fill="none" stroke="#3A2A10" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    <path id="rpg-path-dash" fill="none" stroke="#B88A50" stroke-width="6" stroke-linecap="round" stroke-dasharray="15,8" opacity="0.4"/>
+    <!-- Camino completado -->
+    <path id="rpg-path-done" fill="none" stroke="#FFD700" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+    <!-- Nodos (generados por JS) -->
+    <g id="rpg-nodes"></g>
+    <!-- Personaje pixel art -->
+    <g id="rpg-char" filter="url(#rpg-shadow)" style="transition:transform 0.65s cubic-bezier(.35,.1,.2,1)">
+      <ellipse id="rpg-shadow-el" cx="24" cy="69" rx="15" ry="4" fill="rgba(0,0,0,0.35)"/>
+    </g>
+    <!-- Hint -->
+    <g id="rpg-hint">
+      <rect x="280" y="210" width="300" height="26" rx="4" fill="#0A1628" stroke="#FFD700" stroke-width="1.5" opacity="0.92"/>
+      <text x="430" y="228" text-anchor="middle" fill="#FFD700" font-size="7" font-family="'Press Start 2P',monospace">▶ Avanza al completar batallas</text>
+    </g>
+  </svg>
+  <!-- HUD inferior -->
+  <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#10182C;border-top:2px solid var(--gold);flex-wrap:wrap">
+    <div>
+      <div style="font-family:'Press Start 2P',monospace;font-size:6px;color:var(--gold);margin-bottom:3px">MÉDICO SERUMISTA</div>
+      <div style="font-size:11px;color:var(--cyan)" id="rpg-node-label">📍 Inicio</div>
+    </div>
+    <div style="flex:1;max-width:180px">
+      <div style="height:6px;background:#1A2038;border:1px solid #3A5080;border-radius:2px;margin-top:4px">
+        <div id="rpg-prog-bar" style="height:100%;background:var(--gold);border-radius:2px;transition:width .5s;width:0%"></div>
+      </div>
+      <div style="font-size:9px;color:var(--text3);margin-top:2px" id="rpg-node-topic">Punto de partida SERUMS</div>
+    </div>
+    <button class="rpg-adv-btn" id="rpg-adv-btn" onclick="rpgAdvance()" style="flex:0 0 auto;width:auto;padding:8px 14px;border-radius:8px">▶ AVANZAR</button>
+  </div>
+</div>
+<!-- Modal nodo -->
+<div id="rpg-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:300;align-items:center;justify-content:center;padding:16px" onclick="rpgCloseModal()">
+  <div style="background:#0C1428;border:3px solid var(--gold);padding:20px 22px;max-width:320px;width:100%;box-shadow:6px 6px 0 #7A5800" onclick="event.stopPropagation()">
+    <div style="font-family:'Press Start 2P',monospace;font-size:7px;color:var(--cyan);margin-bottom:8px" id="rpg-modal-type">📍 MISIÓN</div>
+    <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:8px" id="rpg-modal-name"></div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.8;border-left:2px solid var(--gold);padding-left:10px;margin-bottom:16px" id="rpg-modal-topic"></div>
+    <div style="display:flex;gap:8px">
+      <button id="rpg-modal-go" style="display:none;flex:1;padding:10px;background:linear-gradient(180deg,#E84020,#A82C10);border:none;border-bottom:3px solid #6A1A08;color:#fff;font-family:'Press Start 2P',monospace;font-size:7px;cursor:pointer" onclick="rpgAdvance();rpgCloseModal()">▶ IR AQUÍ</button>
+      <button style="flex:1;padding:10px;background:linear-gradient(180deg,#204880,#102840);border:none;border-bottom:3px solid #0A1830;color:#fff;font-family:'Press Start 2P',monospace;font-size:7px;cursor:pointer" onclick="rpgCloseModal()">✕ CERRAR</button>
+    </div>
+  </div>
+</div>
         <div id="mlist"></div>
     </div>
 
@@ -2370,6 +2475,15 @@
     function nextQ(){Qc++;rQ();}
     function showRes(){
       const pc=Math.round(Qcor/Qt*100);
+        // ── Avance automático del mapa RPG ──
+      if(pc>=50&&typeof rpgAdvance==='function'){
+        setTimeout(()=>{
+          showTab('tab-missions');
+          rpgAdvance();
+        },1800);
+      }else if(typeof rpgSyncProgress==='function'){
+        rpgSyncProgress();
+      }
       document.getElementById('mcq-game').style.display='none';
       document.getElementById('mcq-res').style.display='block';
       document.getElementById('remi').textContent=pc>=80?'🏆':pc>=60?'💪':'📚';
@@ -3616,6 +3730,198 @@
         document.getElementById('int-mult').value=S.intervals.mult||2.5;
       }
     }
+    // ═══════════════════════════════════════════════════
+// RPG OVERWORLD MAP ENGINE
+// ═══════════════════════════════════════════════════
+const RPG_NODES=[
+  {id:0,x:90,y:425,zone:1,type:'start', name:'Inicio',         label:'🏘️',topic:'Comunidad Base — Punto de partida SERUMS'},
+  {id:1,x:152,y:390,zone:1,type:'normal',name:'Epidem.',       label:'📊',topic:'Salud Pública — Epidemiología básica'},
+  {id:2,x:210,y:355,zone:1,type:'normal',name:'Pruebas Dx',    label:'🔬',topic:'Salud Pública — Pruebas diagnósticas'},
+  {id:3,x:262,y:317,zone:2,type:'normal',name:'Vigilancia',    label:'👁️',topic:'Salud Pública — Vigilancia epidemiológica'},
+  {id:4,x:308,y:278,zone:2,type:'normal',name:'Bradford',      label:'🔗',topic:'Salud Pública — Bradford Hill y causalidad'},
+  {id:5,x:352,y:250,zone:2,type:'boss',  name:'Jefe Epid.',    label:'⚔️',topic:'BOSS — Examen Zona Salud Pública'},
+  {id:6,x:400,y:245,zone:3,type:'normal',name:'TBC',           label:'🫁',topic:'Cuidado Integral — TBC (PAN TB)'},
+  {id:7,x:438,y:268,zone:3,type:'normal',name:'VIH/ITS',       label:'🔴',topic:'Cuidado Integral — VIH y ITS'},
+  {id:8,x:474,y:245,zone:3,type:'normal',name:'Vacunación',    label:'💉',topic:'Cuidado Integral — Vacunación'},
+  {id:9,x:510,y:222,zone:3,type:'normal',name:'Dengue',        label:'🦟',topic:'Cuidado Integral — Dengue clasificación'},
+  {id:10,x:544,y:202,zone:3,type:'boss', name:'Jefe Clínico',  label:'⚔️',topic:'BOSS — Examen Zona Cuidado Integral'},
+  {id:11,x:582,y:192,zone:4,type:'normal',name:'Gestión',      label:'🏥',topic:'Gestión — Organización de servicios'},
+  {id:12,x:616,y:172,zone:4,type:'normal',name:'DIGEMID',      label:'💊',topic:'Gestión — DIGEMID y farmacovigilancia'},
+  {id:13,x:645,y:152,zone:4,type:'boss', name:'Jefe Gestor',   label:'⚔️',topic:'BOSS — Examen Zona Gestión'},
+  {id:14,x:672,y:135,zone:5,type:'normal',name:'Ética',        label:'⚖️',topic:'Ética e Interculturalidad'},
+  {id:15,x:696,y:116,zone:5,type:'normal',name:'Matern.',      label:'🤱',topic:'Cuidado Integral — Salud materno-neonatal'},
+  {id:16,x:720,y:98, zone:6,type:'normal',name:'Investig.',    label:'📋',topic:'Investigación — Metodología'},
+  {id:17,x:744,y:80, zone:6,type:'normal',name:'FESP',         label:'🏗️',topic:'Salud Pública — FESP'},
+  {id:18,x:770,y:58, zone:6,type:'final', name:'ENCAPS 2026',  label:'🏆',topic:'EXAMEN FINAL — ENCAPS 2026 · 95 temas'}
+];
+
+// Pixel art sprite data: 16×22, scale=3
+const RPG_CM={R:'#D42B35',Y:'#FFD700',G:'#2D8E5A',S:'#D4956A',s:'#A8744A',E:'#0E0808',M:'#B84432',W:'#F8F8F8',w:'#D0D0D0',C:'#8888AA',c:'#CC4444',B:'#4080F0',b:'#2060D0',K:'#6B4020',k:'#3A2010',H:'#1A1A1A'};
+const RPG_FRAMES=[
+  ['......RRRRR.....','....RYRYRYRR....','...RYRYRYRYRR...','..RRRRRRRRRRRR..','..HSSSSSSSS.....','..SEESSSEES.....','..SSSSSSSSSS....','....SSNSSSSSS...','....SSMMMSSS....','...HWWWWWWWWH...','..WWWWWWWWWWWW..','..WWCWWWWWWCWW..','..WWcCWWWWCcWW..','..WWWCCWWCCWWW..','..WWWWWWWWWWWW..','..WWWWWWWWWWWW..','..wBBBBBBBBBBw..','...bBB....bBB...','...BBB....BBB...','...BBB....BBB...','...KKK....KKK...','..kKKk....kKKk..'],
+  ['......RRRRR.....','....RYRYRYRR....','...RYRYRYRYRR...','..RRRRRRRRRRRR..','..HSSSSSSSS.....','..SEESSSEES.....','..SSSSSSSSSS....','....SSNSSSSSS...','....SSMMMSSS....','...HWWWWWWWWH...','..WWWWWWWWWWWW..','..WWCWWWWWWCWW..','..WWcCWWWWCcWW..','..WWWCCWWCCWWW..','..WWWWWWWWWWWW..','..WWWWWWWWWWWW..','..wBBBBBBBBBBw..','....BBb...bBB...','...bBBB...BBb...','....BBB...bBB...','....KKK...KKK...','...kKKk...kKKk..']
+];
+
+let rpgIdx=0, rpgDone=new Set([0]), rpgFrame=0, rpgMoving=false;
+let _rpgInited=false;
+
+function rpgBuildPath(nodes){
+  return nodes.map((n,i)=>{
+    if(i===0)return`M ${n.x} ${n.y}`;
+    const p=nodes[i-1],cx=(p.x+n.x)/2;
+    return`Q ${cx} ${p.y} ${n.x} ${n.y}`;
+  }).join(' ');
+}
+
+function rpgSpriteEl(scale){
+  const SCALE=scale||3;
+  const ns='http://www.w3.org/2000/svg';
+  const g=document.createElementNS(ns,'g');
+  RPG_FRAMES[rpgFrame].forEach((row,y)=>{
+    [...row].forEach((ch,x)=>{
+      if(ch!=='.'&&RPG_CM[ch]){
+        const r=document.createElementNS(ns,'rect');
+        r.setAttribute('x',x*SCALE);r.setAttribute('y',y*SCALE);
+        r.setAttribute('width',SCALE);r.setAttribute('height',SCALE);
+        r.setAttribute('fill',RPG_CM[ch]);
+        g.appendChild(r);
+      }
+    });
+  });
+  return g;
+}
+
+function rpgRender(){
+  const svg=document.getElementById('rpg-svg');
+  if(!svg)return;
+  const ns='http://www.w3.org/2000/svg';
+
+  // Stars (once)
+  if(!_rpgInited){
+    _rpgInited=true;
+    const sg=document.getElementById('rpg-stars');
+    for(let i=0;i<50;i++){
+      const c=document.createElementNS(ns,'circle');
+      c.setAttribute('cx',(i*173.7)%860);c.setAttribute('cy',(i*89.3)%180);
+      c.setAttribute('r',i%4===0?1.8:1);c.setAttribute('fill','white');c.setAttribute('opacity',0.2+i%6*0.1);
+      sg.appendChild(c);
+    }
+  }
+
+  const fullPath=rpgBuildPath(RPG_NODES);
+  const donePath=rpgBuildPath(RPG_NODES.slice(0,rpgIdx+1));
+  document.getElementById('rpg-path-base').setAttribute('d',fullPath);
+  document.getElementById('rpg-path-dash').setAttribute('d',fullPath);
+  document.getElementById('rpg-path-done').setAttribute('d',donePath);
+
+  // Nodes
+  const ng=document.getElementById('rpg-nodes');
+  ng.innerHTML='';
+  RPG_NODES.forEach(node=>{
+    const isDone=rpgDone.has(node.id),isNext=node.id===rpgIdx+1,isCur=node.id===rpgIdx,isLock=node.id>rpgIdx+1;
+    const r=node.type==='final'?15:node.type==='boss'?11:9;
+    const fill=isLock?'#1C2240':isDone?'#FFD700':isNext?'#FF9030':isCur?'#FFFFFF':'#C8C8C8';
+    const stroke=isLock?'#353A58':isDone?'#B89000':isNext?'#CC5500':'#888';
+    const g=document.createElementNS(ns,'g');
+    g.setAttribute('class',isLock?'':'map-node');
+    if(!isLock)g.addEventListener('click',()=>rpgOpenModal(node));
+    if(node.type==='boss'||node.type==='final'){
+      const ring=document.createElementNS(ns,'circle');
+      ring.setAttribute('cx',node.x);ring.setAttribute('cy',node.y);ring.setAttribute('r',r+6);
+      ring.setAttribute('fill','none');ring.setAttribute('stroke',isLock?'#353A58':node.type==='final'?'#FFD700':'#FF6030');
+      ring.setAttribute('stroke-width','2');ring.setAttribute('stroke-dasharray','5,3');ring.setAttribute('opacity','0.7');
+      g.appendChild(ring);
+    }
+    const circle=document.createElementNS(ns,'circle');
+    circle.setAttribute('cx',node.x);circle.setAttribute('cy',node.y);circle.setAttribute('r',r);
+    circle.setAttribute('fill',fill);circle.setAttribute('stroke',stroke);circle.setAttribute('stroke-width','2.5');
+    if(isDone||isNext)g.setAttribute('filter','url(#rpg-gold)');
+    const emoji=document.createElementNS(ns,'text');
+    emoji.setAttribute('x',node.x);emoji.setAttribute('y',node.y+4);emoji.setAttribute('text-anchor','middle');
+    emoji.setAttribute('style','font-size:'+(r*1.1)+'px;font-family:sans-serif;pointer-events:none');
+    emoji.textContent=isLock?'🔒':isDone?(node.type==='final'?'🏆':'⭐'):node.label;
+    if(!isLock){
+      const lbl=document.createElementNS(ns,'text');
+      lbl.setAttribute('x',node.x);lbl.setAttribute('y',node.y-r-5);lbl.setAttribute('text-anchor','middle');
+      lbl.setAttribute('fill',isDone?'#FFD700':'#EAEAEA');
+      lbl.setAttribute('style','font-size:6px;font-family:"Press Start 2P",monospace;pointer-events:none');
+      lbl.setAttribute('stroke','#04080F');lbl.setAttribute('stroke-width','2.5');lbl.setAttribute('paint-order','stroke');
+      lbl.textContent=node.name;
+      g.appendChild(lbl);
+    }
+    g.appendChild(circle);g.appendChild(emoji);
+    ng.appendChild(g);
+  });
+
+  // Character
+  const cur=RPG_NODES[rpgIdx];
+  const cg=document.getElementById('rpg-char');
+  // Clear old sprite pixels
+  while(cg.children.length>1)cg.removeChild(cg.lastChild);
+  const sprite=rpgSpriteEl(3);
+  cg.appendChild(sprite);
+  cg.setAttribute('transform',`translate(${cur.x-24},${cur.y-67})`);
+  const shEl=document.getElementById('rpg-shadow-el');
+  if(shEl){shEl.setAttribute('cx',24);shEl.setAttribute('cy',69);}
+
+  // Hide hint after first move
+  if(rpgIdx>0){const h=document.getElementById('rpg-hint');if(h)h.style.display='none';}
+
+  // HUD
+  const pct=Math.round(rpgDone.size/RPG_NODES.length*100);
+  const pl=document.getElementById('rpg-prog-label');if(pl)pl.textContent=pct+'%';
+  const pb=document.getElementById('rpg-prog-bar');if(pb)pb.style.width=pct+'%';
+  const nl=document.getElementById('rpg-node-label');if(nl)nl.textContent='📍 '+cur.name;
+  const nt=document.getElementById('rpg-node-topic');if(nt)nt.textContent=cur.topic.slice(0,45)+(cur.topic.length>45?'...':'');
+  const btn=document.getElementById('rpg-adv-btn');
+  if(btn)btn.disabled=(rpgIdx>=RPG_NODES.length-1)||rpgMoving;
+}
+
+function rpgAdvance(){
+  if(rpgIdx>=RPG_NODES.length-1||rpgMoving)return;
+  rpgMoving=true;
+  setTimeout(()=>{
+    rpgIdx++;rpgDone.add(rpgIdx);
+    const gain=RPG_NODES[rpgIdx].type==='final'?500:RPG_NODES[rpgIdx].type==='boss'?150:75;
+    addXP(gain);toast('⚔️ +'+gain+' XP — '+RPG_NODES[rpgIdx].name);
+    rpgMoving=false;rpgRender();
+  },650);
+}
+
+function rpgOpenModal(node){
+  const isDone=rpgDone.has(node.id),isNext=node.id===rpgIdx+1;
+  const mt=document.getElementById('rpg-modal-type');
+  const mn=document.getElementById('rpg-modal-name');
+  const mtp=document.getElementById('rpg-modal-topic');
+  const mg=document.getElementById('rpg-modal-go');
+  const m=document.getElementById('rpg-modal');
+  mt.textContent=node.type==='boss'?'⚔️ ZONA BOSS':node.type==='final'?'🏆 EXAMEN FINAL':node.type==='start'?'🏘️ INICIO':'📍 MISIÓN';
+  mt.style.color=node.type==='boss'?'#FF6030':node.type==='final'?'#FFD700':'var(--cyan)';
+  mn.textContent=node.name;
+  mtp.textContent=node.topic;
+  mg.style.display=isNext?'block':'none';
+  m.style.display='flex';
+}
+function rpgCloseModal(){document.getElementById('rpg-modal').style.display='none';}
+
+// Animación frame del sprite
+setInterval(()=>{rpgFrame=1-rpgFrame;rpgRender();},400);
+
+// Inicializar mapa cuando se abre la tab misiones
+const _origShowTab=showTab;
+function showTab(id){
+  _origShowTab(id);
+  if(id==='tab-missions'){setTimeout(rpgRender,80);}
+}
+
+// Sincronizar progreso del mapa con misiones completadas
+function rpgSyncProgress(){
+  let total=0;
+  MISSIONS.forEach(m=>{const p=S.missionsProgress[m.id]||{};total+=m.dungeons.filter((_,i)=>p[i]).length;});
+  const target=Math.floor((total/95)*(RPG_NODES.length-1));
+  while(rpgIdx<target&&rpgIdx<RPG_NODES.length-1){rpgIdx++;rpgDone.add(rpgIdx);}
+  rpgRender();
+}
     init();
 </script>
 </body>

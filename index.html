@@ -3904,14 +3904,38 @@ function rpgOpenModal(node){
 }
 function rpgCloseModal(){document.getElementById('rpg-modal').style.display='none';}
 
-// Animación frame del sprite
-setInterval(()=>{rpgFrame=1-rpgFrame;rpgRender();},400);
+// Animación frame del sprite — solo corre si el mapa está visible
+let _rpgAnimInterval=null;
+
+function rpgStartAnim(){
+  if(_rpgAnimInterval)return;
+  _rpgAnimInterval=setInterval(()=>{
+    const card=document.getElementById('rpg-map-card');
+    if(!card||card.offsetParent===null){rpgStopAnim();return;}
+    rpgFrame=1-rpgFrame;
+    // Solo actualiza el sprite, no el DOM completo
+    const cg=document.getElementById('rpg-char');
+    if(!cg)return;
+    while(cg.children.length>1)cg.removeChild(cg.lastChild);
+    cg.appendChild(rpgSpriteEl(3));
+  },400);
+}
+
+function rpgStopAnim(){
+  clearInterval(_rpgAnimInterval);
+  _rpgAnimInterval=null;
+}
 
 // Inicializar mapa cuando se abre la tab misiones
 const _origShowTab=showTab;
 function showTab(id){
   _origShowTab(id);
-  if(id==='tab-missions'){setTimeout(rpgRender,80);}
+  if(id==='tab-missions'){
+    rpgStopAnim();
+    setTimeout(()=>{rpgRender();rpgStartAnim();},80);
+  }else{
+    rpgStopAnim();
+  }
 }
 
 // Sincronizar progreso del mapa con misiones completadas

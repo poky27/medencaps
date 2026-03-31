@@ -758,7 +758,7 @@
     const LS=()=>{try{const s=localStorage.getItem('mrpg3');if(s)S={...S,...JSON.parse(s)};if(!S.wrongAnswers)S.wrongAnswers=[];if(!S.topicStats)S.topicStats={};if(!S.socWeaknesses)S.socWeaknesses=[];if(!S.mentalModels)S.mentalModels=[];}catch(e){}};
     const SS=()=>{try{localStorage.setItem('mrpg3',JSON.stringify(S))}catch(e){}};
 
-    function showTab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');const i=['tab-char','tab-missions','tab-mcq','tab-pomodoro','tab-science'].indexOf(id);document.querySelectorAll('.nb')[i]?.classList.add('active');if(id==='tab-missions')renderM();if(id==='tab-mcq')renderMastery();if(id==='tab-science'){renderHeatmap();renderForgettingCurve();renderInterleavingSchedule();renderSciRefs();renderDueCards();}}
+    function showTab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');const i=['tab-char','tab-missions','tab-mcq','tab-pomodoro','tab-science'].indexOf(id);document.querySelectorAll('.nb')[i]?.classList.add('active');if(id==='tab-missions'){renderM();if(typeof rpgStopAnim==='function')rpgStopAnim();setTimeout(()=>{if(typeof rpgRender==='function')rpgRender();if(typeof rpgStartAnim==='function')rpgStartAnim();},80);}else{if(typeof rpgStopAnim==='function')rpgStopAnim();}if(id==='tab-mcq')renderMastery();if(id==='tab-science'){renderHeatmap();renderForgettingCurve();renderInterleavingSchedule();renderSciRefs();renderDueCards();}}
 
     function updUI(){
       const p=Math.min(100,(S.xp/S.xpNext)*100);
@@ -3926,17 +3926,7 @@ function rpgStopAnim(){
   _rpgAnimInterval=null;
 }
 
-// Inicializar mapa cuando se abre la tab misiones
-const _origShowTab=showTab;
-function showTab(id){
-  _origShowTab(id);
-  if(id==='tab-missions'){
-    rpgStopAnim();
-    setTimeout(()=>{rpgRender();rpgStartAnim();},80);
-  }else{
-    rpgStopAnim();
-  }
-}
+
 
 // Sincronizar progreso del mapa con misiones completadas
 function rpgSyncProgress(){

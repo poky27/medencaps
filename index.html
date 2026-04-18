@@ -433,18 +433,15 @@
      Nodos: 0(96,368) 1(138,348) 2(178,362)
      Hue-shift: verde→violeta-tierra (cliff #804818)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="0" y="340" width="248" height="2" fill="#98E860"/><!-- top highlight -->
-<rect x="0" y="342" width="248" height="50" fill="#68D028"/><!-- core -->
-<rect x="0" y="392" width="248" height="2" fill="#3A7020"/><!-- plateau bottom shade -->
-<!-- AO line 2px entre plateau y cliff -->
-<rect x="0" y="394" width="248" height="1" fill="#285010"/>
-<rect x="0" y="395" width="248" height="1" fill="#1A3808"/><!-- sub-AO -->
-<!-- Cliff wall hue-shifted (violeta-tierra) con bevel -->
-<rect x="0" y="396" width="248" height="2" fill="#A06030"/><!-- cliff top highlight -->
-<rect x="0" y="398" width="248" height="10" fill="#804818"/><!-- cliff core hue-shifted -->
-<rect x="0" y="408" width="248" height="4" fill="#5A2808"/><!-- cliff mid shadow -->
-<rect x="0" y="412" width="248" height="2" fill="#401808"/><!-- cliff base deeper -->
+<!-- Isla Valle redondeada (curvas Q Bezier) — left en viewBox edge -->
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 262,376 252,416 Q 124,428 0,418 Z" fill="#401808"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 260,376 250,412 Q 124,422 0,414 Z" fill="#5A2808"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 258,374 248,406 Q 124,414 0,408 Z" fill="#804818"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 256,370 246,398 Q 124,404 0,400 Z" fill="#A06030"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 254,368 244,394 Q 124,398 0,394 Z" fill="#1A3808"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 254,366 244,392 Q 124,396 0,392 Z" fill="#3A7020"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 Q 252,364 244,390 Q 124,394 0,390 Z" fill="#68D028"/>
+<path d="M 0,340 Q 60,328 124,334 Q 188,328 248,340 L 248,344 Q 188,332 124,338 Q 60,332 0,344 Z" fill="#98E860"/>
 <!-- Pasto texturizado con 3 tonos -->
 <g fill="#3A7020">
   <rect x="14" y="348" width="3" height="1"/><rect x="42" y="358" width="3" height="1"/><rect x="78" y="354" width="3" height="1"/><rect x="118" y="380" width="3" height="1"/>
@@ -565,18 +562,15 @@
      Nodos: 3(372,362) 4(415,342) 5(458,358)
      Hue-shift: arena→rojo-tierra (cliff #8C3818)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="312" y="340" width="248" height="2" fill="#FFDCA0"/><!-- top highlight -->
-<rect x="312" y="342" width="248" height="50" fill="#E8C078"/><!-- core -->
-<rect x="312" y="392" width="248" height="2" fill="#A07830"/><!-- plateau bottom shade -->
-<!-- AO line -->
-<rect x="312" y="394" width="248" height="1" fill="#7A4020"/>
-<rect x="312" y="395" width="248" height="1" fill="#401808"/>
-<!-- Cliff wall hue-shifted (rojo-tierra) con bevel -->
-<rect x="312" y="396" width="248" height="2" fill="#B05028"/><!-- cliff top highlight -->
-<rect x="312" y="398" width="248" height="10" fill="#8C3818"/><!-- cliff core hue-shifted red-earth -->
-<rect x="312" y="408" width="248" height="4" fill="#5A1808"/><!-- cliff mid shadow -->
-<rect x="312" y="412" width="248" height="2" fill="#401008"/><!-- cliff base -->
+<!-- Isla Altiplano redondeada — right en viewBox edge -->
+<path d="M 312,340 Q 302,376 310,416 Q 436,428 560,418 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#401008"/>
+<path d="M 312,340 Q 302,376 310,412 Q 436,422 560,414 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#5A1808"/>
+<path d="M 312,340 Q 300,374 312,406 Q 436,414 560,408 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#8C3818"/>
+<path d="M 312,340 Q 302,370 314,398 Q 436,404 560,400 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#B05028"/>
+<path d="M 312,340 Q 304,368 316,394 Q 436,398 560,394 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#401808"/>
+<path d="M 312,340 Q 304,366 316,392 Q 436,396 560,392 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#A07830"/>
+<path d="M 312,340 Q 306,364 316,390 Q 436,394 560,390 L 560,340 Q 500,328 436,334 Q 372,328 312,340 Z" fill="#E8C078"/>
+<path d="M 312,340 Q 372,328 436,334 Q 500,328 560,340 L 560,344 Q 500,332 436,338 Q 372,332 312,344 Z" fill="#FFDCA0"/>
 <!-- Sand texture con 3 tonos -->
 <g fill="#7A4020">
   <rect x="320" y="360" width="3" height="1"/><rect x="360" y="356" width="3" height="1"/><rect x="402" y="368" width="3" height="1"/><rect x="450" y="360" width="3" height="1"/><rect x="502" y="366" width="3" height="1"/>
@@ -690,18 +684,15 @@
      Nodos: 6(142,256) 7(180,238) 8(222,252) 9(185,272)
      Hue-shift: verde-osc→violeta-musgo (cliff #603820)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="88" y="216" width="184" height="2" fill="#50C038"/><!-- top highlight -->
-<rect x="88" y="218" width="184" height="72" fill="#28900A"/><!-- core -->
-<rect x="88" y="290" width="184" height="2" fill="#186010"/><!-- plateau bottom shade -->
-<!-- AO -->
-<rect x="88" y="292" width="184" height="1" fill="#0A3008"/>
-<rect x="88" y="293" width="184" height="1" fill="#041808"/>
-<!-- Cliff wall hue-shifted musgo-violeta -->
-<rect x="88" y="294" width="184" height="2" fill="#805028"/><!-- cliff top highlight -->
-<rect x="88" y="296" width="184" height="10" fill="#603820"/><!-- cliff core -->
-<rect x="88" y="306" width="184" height="4" fill="#3A1808"/><!-- mid shadow -->
-<rect x="88" y="310" width="184" height="2" fill="#281008"/><!-- deeper -->
+<!-- Isla Selva redondeada (4 bordes curvados — isla completa) -->
+<path d="M 88,220 Q 180,204 272,220 Q 288,256 272,314 Q 180,326 88,314 Q 72,256 88,220 Z" fill="#281008"/>
+<path d="M 88,220 Q 180,204 272,220 Q 286,254 272,310 Q 180,322 88,310 Q 74,256 88,220 Z" fill="#3A1808"/>
+<path d="M 88,220 Q 180,204 272,220 Q 284,252 272,304 Q 180,314 88,304 Q 76,254 88,220 Z" fill="#603820"/>
+<path d="M 88,220 Q 180,204 272,220 Q 282,250 272,298 Q 180,306 88,298 Q 78,252 88,220 Z" fill="#805028"/>
+<path d="M 88,220 Q 180,204 272,220 Q 280,248 272,293 Q 180,300 88,293 Q 80,250 88,220 Z" fill="#041808"/>
+<path d="M 88,220 Q 180,204 272,220 Q 280,248 272,291 Q 180,298 88,291 Q 80,250 88,220 Z" fill="#186010"/>
+<path d="M 88,220 Q 180,204 272,220 Q 280,248 272,289 Q 180,296 88,289 Q 80,250 88,220 Z" fill="#28900A"/>
+<path d="M 88,220 Q 180,204 272,220 L 272,224 Q 180,208 88,224 Z" fill="#50C038"/>
 <!-- Dense mini-tree canopy (rows offset) con 3 tonos -->
 <g>
   <g transform="translate(96,218)"><rect x="4" y="8" width="4" height="1" fill="#0A3008" opacity="0.7"/><rect x="0" y="0" width="6" height="6" fill="#0A3008"/><rect x="1" y="0" width="5" height="5" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/><rect x="2" y="-2" width="2" height="1" fill="#50C038"/></g>
@@ -800,18 +791,15 @@
      Nodos: 10(362,242) 11(402,222) 12(442,238)
      Hue-shift: choco→vino (cliff #402030)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="308" y="208" width="200" height="2" fill="#E09048"/><!-- top highlight -->
-<rect x="308" y="210" width="200" height="70" fill="#B87030"/><!-- core -->
-<rect x="308" y="280" width="200" height="2" fill="#7A4010"/><!-- bottom shade -->
-<!-- AO -->
-<rect x="308" y="282" width="200" height="1" fill="#502818"/>
-<rect x="308" y="283" width="200" height="1" fill="#2A1008"/>
-<!-- Cliff wall hue-shifted vino -->
-<rect x="308" y="284" width="200" height="2" fill="#605040"/>
-<rect x="308" y="286" width="200" height="10" fill="#402030"/><!-- hue-shifted core -->
-<rect x="308" y="296" width="200" height="4" fill="#281018"/>
-<rect x="308" y="300" width="200" height="2" fill="#1A0818"/>
+<!-- Isla Ciudadela redondeada (4 bordes curvados) -->
+<path d="M 308,212 Q 408,196 508,212 Q 522,248 508,304 Q 408,318 308,304 Q 294,248 308,212 Z" fill="#1A0818"/>
+<path d="M 308,212 Q 408,196 508,212 Q 520,246 508,300 Q 408,314 308,300 Q 296,248 308,212 Z" fill="#281018"/>
+<path d="M 308,212 Q 408,196 508,212 Q 518,244 508,294 Q 408,306 308,294 Q 298,246 308,212 Z" fill="#402030"/>
+<path d="M 308,212 Q 408,196 508,212 Q 516,242 508,288 Q 408,298 308,288 Q 300,244 308,212 Z" fill="#605040"/>
+<path d="M 308,212 Q 408,196 508,212 Q 514,240 508,283 Q 408,290 308,283 Q 302,242 308,212 Z" fill="#2A1008"/>
+<path d="M 308,212 Q 408,196 508,212 Q 514,240 508,281 Q 408,288 308,281 Q 302,242 308,212 Z" fill="#7A4010"/>
+<path d="M 308,212 Q 408,196 508,212 Q 514,240 508,279 Q 408,286 308,279 Q 302,242 308,212 Z" fill="#B87030"/>
+<path d="M 308,212 Q 408,196 508,212 L 508,216 Q 408,200 308,216 Z" fill="#E09048"/>
 <!-- Stone tiles con 3 tonos -->
 <g fill="#6A3010">
   <rect x="320" y="226" width="4" height="2"/><rect x="348" y="240" width="4" height="2"/><rect x="460" y="236" width="4" height="2"/><rect x="488" y="244" width="4" height="2"/>
@@ -910,18 +898,15 @@
      Nodos: 13(138,132) 14(175,112) 15(215,128)
      Hue-shift: morado→indigo (cliff #4830A0)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="84" y="100" width="180" height="2" fill="#D098F8"/><!-- top highlight -->
-<rect x="84" y="102" width="180" height="70" fill="#A060D8"/><!-- core -->
-<rect x="84" y="172" width="180" height="2" fill="#6030A0"/><!-- bottom shade -->
-<!-- AO -->
-<rect x="84" y="174" width="180" height="1" fill="#301850"/>
-<rect x="84" y="175" width="180" height="1" fill="#180830"/>
-<!-- Cliff wall hue-shifted indigo -->
-<rect x="84" y="176" width="180" height="2" fill="#6848C0"/>
-<rect x="84" y="178" width="180" height="10" fill="#4830A0"/><!-- core indigo -->
-<rect x="84" y="188" width="180" height="4" fill="#281060"/>
-<rect x="84" y="192" width="180" height="2" fill="#180830"/>
+<!-- Isla Santuario redondeada (4 bordes curvados) -->
+<path d="M 84,104 Q 176,88 264,104 Q 278,138 264,196 Q 176,210 84,196 Q 70,138 84,104 Z" fill="#180830"/>
+<path d="M 84,104 Q 176,88 264,104 Q 276,136 264,192 Q 176,206 84,192 Q 72,138 84,104 Z" fill="#281060"/>
+<path d="M 84,104 Q 176,88 264,104 Q 274,134 264,186 Q 176,198 84,186 Q 74,136 84,104 Z" fill="#4830A0"/>
+<path d="M 84,104 Q 176,88 264,104 Q 272,132 264,180 Q 176,190 84,180 Q 76,134 84,104 Z" fill="#6848C0"/>
+<path d="M 84,104 Q 176,88 264,104 Q 270,130 264,175 Q 176,182 84,175 Q 78,132 84,104 Z" fill="#180830"/>
+<path d="M 84,104 Q 176,88 264,104 Q 270,130 264,173 Q 176,180 84,173 Q 78,132 84,104 Z" fill="#6030A0"/>
+<path d="M 84,104 Q 176,88 264,104 Q 270,130 264,171 Q 176,178 84,171 Q 78,132 84,104 Z" fill="#A060D8"/>
+<path d="M 84,104 Q 176,88 264,104 L 264,108 Q 176,92 84,108 Z" fill="#D098F8"/>
 <!-- Texture dots 3 tonos -->
 <g fill="#6030A0">
   <rect x="108" y="120" width="3" height="1"/><rect x="166" y="142" width="3" height="1"/><rect x="226" y="130" width="3" height="1"/>
@@ -1031,18 +1016,15 @@
      Nodos: 16(372,108) 17(414,88) 18(455,104)
      Hue-shift: oro→morado-real (cliff #5830A0)
      ========================================================= -->
-<!-- Bevel 3 capas plateau -->
-<rect x="304" y="100" width="212" height="2" fill="#F8C868"/><!-- top highlight -->
-<rect x="304" y="102" width="212" height="70" fill="#D8A040"/><!-- core -->
-<rect x="304" y="172" width="212" height="2" fill="#986810"/><!-- bottom shade -->
-<!-- AO -->
-<rect x="304" y="174" width="212" height="1" fill="#503010"/>
-<rect x="304" y="175" width="212" height="1" fill="#281810"/>
-<!-- Cliff wall hue-shifted morado real -->
-<rect x="304" y="176" width="212" height="2" fill="#7848C0"/>
-<rect x="304" y="178" width="212" height="10" fill="#5830A0"/><!-- morado real -->
-<rect x="304" y="188" width="212" height="4" fill="#281060"/>
-<rect x="304" y="192" width="212" height="2" fill="#180828"/>
+<!-- Isla Cima redondeada — right en viewBox edge -->
+<path d="M 304,104 Q 404,88 516,104 L 516,196 Q 404,210 304,196 Q 290,138 304,104 Z" fill="#180828"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,192 Q 404,206 304,192 Q 292,138 304,104 Z" fill="#281060"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,186 Q 404,198 304,186 Q 294,136 304,104 Z" fill="#5830A0"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,180 Q 404,190 304,180 Q 296,134 304,104 Z" fill="#7848C0"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,175 Q 404,182 304,175 Q 298,132 304,104 Z" fill="#281810"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,173 Q 404,180 304,173 Q 298,132 304,104 Z" fill="#986810"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,171 Q 404,178 304,171 Q 298,132 304,104 Z" fill="#D8A040"/>
+<path d="M 304,104 Q 404,88 516,104 L 516,108 Q 404,92 304,108 Z" fill="#F8C868"/>
 <!-- Lava cracks con 3 tonos (profundidad en piso) -->
 <g fill="#6A3808">
   <rect x="318" y="130" width="3" height="1"/><rect x="358" y="118" width="3" height="1"/><rect x="498" y="132" width="3" height="1"/>

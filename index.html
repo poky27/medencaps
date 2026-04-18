@@ -346,305 +346,620 @@
   <linearGradient id="cliff1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C88030"/><stop offset="100%" stop-color="#8A5010"/></linearGradient>
   <linearGradient id="cliff2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#B07828"/><stop offset="100%" stop-color="#784808"/></linearGradient>
 </defs>
-<rect x="0" y="0" width="560" height="100" fill="url(#sky-g)"/>
-<circle cx="510" cy="45" r="30" fill="#FFE840" opacity="0.95"/>
-<circle cx="510" cy="45" r="24" fill="#FFD020"/>
-<g fill="white">
-  <ellipse cx="60" cy="32" rx="28" ry="14"/><ellipse cx="45" cy="38" rx="18" ry="11"/><ellipse cx="78" cy="38" rx="20" ry="11"/>
-  <ellipse cx="200" cy="22" rx="32" ry="15"/><ellipse cx="183" cy="28" rx="20" ry="12"/><ellipse cx="222" cy="28" rx="22" ry="12"/>
-  <ellipse cx="350" cy="30" rx="26" ry="13"/><ellipse cx="336" cy="36" rx="18" ry="11"/><ellipse cx="368" cy="36" rx="20" ry="11"/>
-  <ellipse cx="290" cy="18" rx="14" ry="7"/><ellipse cx="450" cy="16" rx="18" ry="8"/><ellipse cx="140" cy="55" rx="12" ry="6" opacity="0.7"/>
+<!-- Sky solid SNES blue -->
+<rect x="0" y="0" width="560" height="100" fill="#6898F8"/>
+<!-- Sun pixel blocky -->
+<g transform="translate(490,20)">
+  <rect x="8" y="0" width="16" height="4" fill="#FFD020"/>
+  <rect x="4" y="4" width="24" height="4" fill="#FFD020"/>
+  <rect x="0" y="8" width="32" height="16" fill="#FFD020"/>
+  <rect x="4" y="24" width="24" height="4" fill="#FFD020"/>
+  <rect x="8" y="28" width="16" height="4" fill="#FFD020"/>
+  <rect x="10" y="2" width="12" height="2" fill="#FFE840"/>
+  <rect x="6" y="6" width="20" height="2" fill="#FFE840"/>
+  <rect x="2" y="10" width="28" height="4" fill="#FFE840"/>
+  <rect x="8" y="14" width="4" height="2" fill="#FFF880"/>
 </g>
-<!-- === DINOSAUR LAND OVERWORLD — SMW STYLE === -->
-<!-- SEA base -->
-<rect x="0" y="100" width="560" height="368" fill="url(#sea-g)"/>
-<rect x="0" y="100" width="560" height="28" fill="url(#sea-shallow)" opacity="0.7"/>
-<g stroke="rgba(255,255,255,0.22)" stroke-width="1.3" fill="none">
-  <path d="M0,114 Q40,110 80,114 Q120,118 160,114 Q200,110 240,114 Q280,118 320,114 Q360,110 400,114 Q440,118 480,114 Q520,110 560,114"/>
-  <path d="M0,162 Q45,158 90,162 Q135,166 180,162 Q225,158 270,162 Q315,166 360,162 Q405,158 450,162 Q495,166 540,162"/>
-  <path d="M0,210 Q50,206 100,210 Q150,214 200,210 Q250,206 300,210 Q350,214 400,210 Q450,206 500,210 Q530,214 560,210"/>
-  <path d="M0,305 Q55,301 110,305 Q165,309 220,305 Q275,301 330,305 Q385,309 440,305 Q495,301 550,305"/>
-  <path d="M0,395 Q60,391 120,395 Q180,399 240,395 Q300,391 360,395 Q420,399 480,395 Q520,391 560,395"/>
-  <path d="M0,440 Q60,436 120,440 Q180,444 240,440 Q300,436 360,440 Q420,444 480,440 Q520,436 560,440"/>
+<!-- Pixel clouds (blocky SMW style) -->
+<g fill="#FFFFFF">
+  <!-- Cloud 1 -->
+  <rect x="32" y="24" width="56" height="12"/>
+  <rect x="40" y="18" width="40" height="6"/>
+  <rect x="48" y="14" width="24" height="4"/>
+  <rect x="24" y="28" width="8" height="8"/>
+  <rect x="88" y="28" width="8" height="8"/>
+  <!-- Cloud 2 -->
+  <rect x="176" y="14" width="64" height="14"/>
+  <rect x="184" y="8" width="48" height="6"/>
+  <rect x="192" y="4" width="32" height="4"/>
+  <rect x="168" y="18" width="8" height="10"/>
+  <rect x="240" y="18" width="8" height="10"/>
+  <!-- Cloud 3 -->
+  <rect x="320" y="22" width="52" height="12"/>
+  <rect x="328" y="16" width="36" height="6"/>
+  <rect x="336" y="12" width="20" height="4"/>
+  <rect x="312" y="26" width="8" height="8"/>
+  <rect x="372" y="26" width="8" height="8"/>
+  <!-- Cloud 4 small -->
+  <rect x="420" y="8" width="32" height="8"/>
+  <rect x="424" y="4" width="24" height="4"/>
+  <rect x="416" y="10" width="4" height="6"/>
+  <rect x="452" y="10" width="4" height="6"/>
+  <!-- Cloud 5 small -->
+  <rect x="128" y="52" width="28" height="6"/>
+  <rect x="132" y="48" width="20" height="4"/>
+  <rect x="124" y="54" width="4" height="4"/>
+  <rect x="156" y="54" width="4" height="4"/>
 </g>
-<g fill="rgba(255,255,255,0.55)">
-  <circle cx="70" cy="180" r="1.6"/><circle cx="265" cy="155" r="1.6"/><circle cx="380" cy="180" r="1.6"/>
-  <circle cx="490" cy="290" r="1.6"/><circle cx="110" cy="300" r="1.6"/><circle cx="330" cy="305" r="1.6"/>
-  <circle cx="40" cy="420" r="1.6"/><circle cx="500" cy="420" r="1.6"/><circle cx="290" cy="345" r="1.6"/>
+<!-- Cloud shading -->
+<g fill="#E0E8F8">
+  <rect x="32" y="32" width="56" height="4"/>
+  <rect x="176" y="22" width="64" height="6"/>
+  <rect x="320" y="30" width="52" height="4"/>
+  <rect x="420" y="14" width="32" height="2"/>
 </g>
-<!-- Boats -->
-<g><rect x="295" y="322" width="2" height="14" fill="#8A5010"/><polygon points="297,322 310,328 297,334" fill="#FFFFFF" stroke="#CCC" stroke-width="0.5"/><ellipse cx="300" cy="338" rx="13" ry="5" fill="#2050A0" stroke="#000" stroke-width="0.8"/><ellipse cx="300" cy="336" rx="11" ry="4" fill="#607080"/></g>
-<g><rect x="75" y="272" width="2" height="10" fill="#8A5010"/><polygon points="77,272 86,277 77,282" fill="#FFFFFF" stroke="#CCC" stroke-width="0.5"/><ellipse cx="80" cy="284" rx="9" ry="4" fill="#1848A0" stroke="#000" stroke-width="0.8"/></g>
-<g><rect x="485" y="170" width="2" height="10" fill="#8A5010"/><polygon points="487,170 495,175 487,180" fill="#FFFFFF" stroke="#CCC" stroke-width="0.5"/><ellipse cx="490" cy="183" rx="9" ry="4" fill="#1848A0" stroke="#000" stroke-width="0.8"/></g>
+<!-- === DINOSAUR LAND OVERWORLD — TRUE SMW PIXEL STYLE === -->
+<!-- Sea solid SNES blue + horizontal foam bands (no curves) -->
+<rect x="0" y="100" width="560" height="368" fill="#3068D8"/>
+<g fill="#5090F0">
+  <rect x="0" y="126" width="560" height="3"/>
+  <rect x="0" y="170" width="560" height="2"/>
+  <rect x="0" y="218" width="560" height="3"/>
+  <rect x="0" y="270" width="560" height="2"/>
+  <rect x="0" y="330" width="560" height="3"/>
+  <rect x="0" y="400" width="560" height="2"/>
+  <rect x="0" y="448" width="560" height="3"/>
+</g>
+<g fill="#80B8FF">
+  <rect x="40" y="132" width="24" height="1"/><rect x="180" y="132" width="32" height="1"/><rect x="340" y="132" width="28" height="1"/><rect x="460" y="132" width="36" height="1"/>
+  <rect x="20" y="224" width="28" height="1"/><rect x="120" y="224" width="40" height="1"/><rect x="280" y="224" width="32" height="1"/><rect x="420" y="224" width="44" height="1"/>
+  <rect x="60" y="336" width="32" height="1"/><rect x="200" y="336" width="40" height="1"/><rect x="360" y="336" width="36" height="1"/><rect x="480" y="336" width="40" height="1"/>
+</g>
 
-<!-- === SOUTHERN CONTINENT (wld 1 Valle + wld 2 Altiplano, unidos por istmo) === -->
-<!-- Cliff/shadow base -->
-<path d="M -5,412 Q 30,402 70,398 Q 115,393 160,394 Q 200,396 235,393 Q 258,390 275,400 Q 295,412 325,405 Q 365,394 410,392 Q 465,391 520,395 Q 565,400 570,415 L 570,470 L -5,470 Z"
-  fill="url(#cliff1)" stroke="#5A2800" stroke-width="2.5"/>
-<!-- Sand beach ring -->
-<path d="M -5,400 Q 30,390 70,386 Q 115,381 160,382 Q 200,384 235,381 Q 258,377 275,387 Q 295,400 325,392 Q 365,381 410,379 Q 465,378 520,382 Q 565,387 570,402 L 570,412 L -5,412 Z"
-  fill="#F8E098" stroke="#D4A858" stroke-width="0.8"/>
-<!-- Grass top — Valle del Saber (W verde) -->
-<path d="M -5,392 Q 30,380 70,376 Q 115,371 160,372 Q 200,374 235,371 Q 252,369 265,379 L 265,402 L -5,402 Z"
-  fill="#5CC435" stroke="#2A6010" stroke-width="2.5"/>
-<!-- Grass top — Altiplano Epid. (E arena/mesa) -->
-<path d="M 265,379 Q 280,391 308,386 Q 345,378 390,372 Q 440,370 495,371 Q 540,375 565,380 L 565,402 L 265,402 Z"
-  fill="#D4A030" stroke="#7A4808" stroke-width="2.5"/>
-<!-- Grass bumps Valle -->
+<!-- ========== MOUNTAINS in background (behind Cima) ========== -->
 <g>
-  <ellipse cx="35" cy="360" rx="22" ry="11" fill="#70D848"/>
-  <ellipse cx="85" cy="354" rx="24" ry="12" fill="#78E050"/>
-  <ellipse cx="135" cy="351" rx="26" ry="13" fill="#6CD040"/>
-  <ellipse cx="185" cy="355" rx="23" ry="11" fill="#78E050"/>
-  <ellipse cx="228" cy="362" rx="18" ry="9" fill="#70D848"/>
+  <!-- distant range -->
+  <polygon points="296,140 332,68 368,140" fill="#806038" stroke="#403010" stroke-width="2"/>
+  <polygon points="296,140 332,68 320,140" fill="#604820"/>
+  <polygon points="324,76 332,68 340,76 340,96 324,96" fill="#FFFFFF"/>
+  <rect x="326" y="96" width="12" height="2" fill="#D0D0D0"/>
+
+  <polygon points="348,140 390,44 432,140" fill="#8C6A3C" stroke="#403010" stroke-width="2"/>
+  <polygon points="348,140 390,44 376,140" fill="#604820"/>
+  <polygon points="380,54 390,44 400,54 400,80 380,80" fill="#FFFFFF"/>
+  <rect x="382" y="80" width="16" height="3" fill="#D0D0D0"/>
+
+  <polygon points="416,140 460,52 504,140" fill="#806038" stroke="#403010" stroke-width="2"/>
+  <polygon points="416,140 460,52 444,140" fill="#604820"/>
+  <polygon points="450,62 460,52 470,62 470,90 450,90" fill="#FFFFFF"/>
+  <rect x="450" y="90" width="20" height="3" fill="#D0D0D0"/>
+
+  <polygon points="480,140 516,72 552,140" fill="#8C6A3C" stroke="#403010" stroke-width="2"/>
+  <polygon points="480,140 516,72 504,140" fill="#604820"/>
+  <polygon points="508,80 516,72 524,80 524,100 508,100" fill="#FFFFFF"/>
 </g>
-<!-- Sand dunes Altiplano -->
+
+<!-- =========================================================
+     BIOMA 1 — VALLE DEL SABER (Yoshi Island SW)
+     Plateau verde con cliff marron pixel, pasto texturizado,
+     mini-arboles en cluster, casa Mario, camino blanco serpenteando
+     Nodos: 0(96,368) 1(138,348) 2(178,362)
+     ========================================================= -->
+<!-- Cliff back shadow strip -->
+<rect x="0" y="396" width="248" height="4" fill="#000000"/>
+<!-- Cliff wall (marron banded) 8-12px tall -->
+<rect x="0" y="400" width="248" height="8" fill="#B07830"/>
+<rect x="0" y="408" width="248" height="6" fill="#8A5020"/>
+<rect x="0" y="414" width="248" height="4" fill="#603810"/>
+<rect x="0" y="418" width="248" height="50" fill="#3068D8"/>
+<!-- Grass top band (plateau border) -->
+<rect x="0" y="392" width="248" height="4" fill="#2A7010"/>
+<rect x="0" y="388" width="248" height="4" fill="#50B020"/>
+<!-- Grass plateau -->
+<rect x="0" y="340" width="248" height="52" fill="#68D028"/>
+<!-- Grass texture dots (pixel style) -->
+<g fill="#50B020">
+  <rect x="8" y="348" width="2" height="2"/><rect x="20" y="356" width="2" height="2"/><rect x="32" y="344" width="2" height="2"/><rect x="44" y="360" width="2" height="2"/>
+  <rect x="56" y="352" width="2" height="2"/><rect x="72" y="348" width="2" height="2"/><rect x="88" y="356" width="2" height="2"/><rect x="108" y="380" width="2" height="2"/>
+  <rect x="120" y="356" width="2" height="2"/><rect x="156" y="380" width="2" height="2"/><rect x="172" y="344" width="2" height="2"/><rect x="196" y="360" width="2" height="2"/>
+  <rect x="212" y="352" width="2" height="2"/><rect x="228" y="344" width="2" height="2"/><rect x="240" y="356" width="2" height="2"/>
+</g>
+<g fill="#8CE038">
+  <rect x="12" y="344" width="2" height="2"/><rect x="40" y="352" width="2" height="2"/><rect x="68" y="356" width="2" height="2"/><rect x="100" y="344" width="2" height="2"/>
+  <rect x="148" y="352" width="2" height="2"/><rect x="176" y="360" width="2" height="2"/><rect x="204" y="348" width="2" height="2"/><rect x="232" y="352" width="2" height="2"/>
+</g>
+<!-- Camino blanco serpenteando en Valle -->
+<path d="M 6,384 L 40,380 L 72,376 L 96,370 L 120,360 L 140,350 L 160,356 L 178,364 L 200,372 L 230,380 L 248,384"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 6,384 L 40,380 L 72,376 L 96,370 L 120,360 L 140,350 L 160,356 L 178,364 L 200,372 L 230,380 L 248,384"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Mini-trees Valle (pixel) -->
 <g>
-  <ellipse cx="300" cy="368" rx="22" ry="10" fill="#E8B840"/>
-  <ellipse cx="355" cy="360" rx="26" ry="11" fill="#ECC040"/>
-  <ellipse cx="410" cy="356" rx="26" ry="12" fill="#E8B840"/>
-  <ellipse cx="465" cy="360" rx="24" ry="11" fill="#ECC040"/>
-  <ellipse cx="515" cy="365" rx="19" ry="9" fill="#E8B840"/>
+  <g transform="translate(14,346)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(28,352)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(60,348)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(196,344)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(218,354)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(232,360)"><rect x="3" y="6" width="2" height="4" fill="#4A2808"/><rect x="0" y="0" width="8" height="6" fill="#1A6010"/><rect x="2" y="-2" width="4" height="2" fill="#28900A"/></g>
 </g>
-<!-- Mario's house (Yoshi Island SW) -->
-<g transform="translate(56,332)">
-  <rect x="0" y="9" width="22" height="18" fill="#F0A050" stroke="#000" stroke-width="2"/>
-  <polygon points="0,9 11,-1 22,9" fill="#CC5020" stroke="#000" stroke-width="2"/>
-  <rect x="8" y="19" width="6" height="8" fill="#4A2008"/>
-  <rect x="2" y="13" width="5" height="5" fill="#A8DCFF" stroke="#000" stroke-width="1"/>
-  <rect x="10" y="-4" width="3" height="6" fill="#8A5010"/>
-  <path d="M10,-4 Q11,-7 13,-4" stroke="#D0D0D0" stroke-width="1" fill="none"/>
+<!-- Mario's house pixel -->
+<g transform="translate(48,346)">
+  <rect x="0" y="10" width="22" height="18" fill="#000"/>
+  <rect x="2" y="12" width="18" height="14" fill="#F0A050"/>
+  <rect x="2" y="12" width="18" height="2" fill="#FFC880"/>
+  <polygon points="0,10 11,-2 22,10" fill="#000"/>
+  <polygon points="2,10 11,0 20,10" fill="#CC4020"/>
+  <rect x="5" y="2" width="3" height="2" fill="#E85030"/>
+  <rect x="8" y="20" width="6" height="8" fill="#3A1808"/>
+  <rect x="9" y="21" width="4" height="6" fill="#5A2810"/>
+  <rect x="4" y="14" width="4" height="4" fill="#000"/>
+  <rect x="5" y="15" width="2" height="2" fill="#A8DCFF"/>
+  <rect x="6" y="15" width="1" height="2" fill="#80B0E0"/>
+  <rect x="14" y="14" width="4" height="4" fill="#000"/>
+  <rect x="15" y="15" width="2" height="2" fill="#A8DCFF"/>
+  <rect x="10" y="-4" width="2" height="4" fill="#4A2808"/>
 </g>
-<!-- Trees Valle -->
-<g transform="translate(16,344)"><rect x="3" y="9" width="5" height="13" fill="#3A5808" stroke="#000" stroke-width="1"/><ellipse cx="5" cy="7" rx="9" ry="10" fill="#28780A" stroke="#000" stroke-width="1.5"/><ellipse cx="5" cy="3" rx="7" ry="7" fill="#38A010" stroke="#000" stroke-width="1"/></g>
-<g transform="translate(215,344)"><rect x="3" y="9" width="4" height="11" fill="#3A5808" stroke="#000" stroke-width="1"/><ellipse cx="5" cy="7" rx="8" ry="9" fill="#28780A" stroke="#000" stroke-width="1.5"/><ellipse cx="5" cy="3" rx="6" ry="6" fill="#38A010" stroke="#000" stroke-width="1"/></g>
-<!-- Cacti Altiplano (Chocolate Island-style) -->
-<g transform="translate(318,342)">
-  <rect x="4" y="4" width="5" height="16" fill="#50A828" stroke="#000" stroke-width="1"/>
-  <rect x="0" y="8" width="4" height="9" fill="#50A828" stroke="#000" stroke-width="1"/>
-  <rect x="9" y="6" width="4" height="10" fill="#50A828" stroke="#000" stroke-width="1"/>
-</g>
-<g transform="translate(495,348)">
-  <rect x="4" y="4" width="5" height="14" fill="#50A828" stroke="#000" stroke-width="1"/>
-  <rect x="0" y="8" width="4" height="7" fill="#50A828" stroke="#000" stroke-width="1"/>
-</g>
-<!-- Pyramids/rocky peaks Altiplano -->
-<polygon points="390,345 405,325 420,345" fill="#B87820" stroke="#000" stroke-width="1.5"/>
-<polygon points="402,345 411,329 420,345" fill="#D49030" stroke="#000" stroke-width="1"/>
-<polygon points="445,348 458,330 471,348" fill="#B87820" stroke="#000" stroke-width="1.5"/>
-<polygon points="455,348 463,334 471,348" fill="#D49030" stroke="#000" stroke-width="1"/>
-<!-- Labels -->
-<rect x="52" y="413" width="160" height="16" rx="8" fill="#000" stroke="#5CC435" stroke-width="2.5"/>
-<rect x="54" y="415" width="156" height="12" rx="6" fill="#206010"/>
-<text x="132" y="425" text-anchor="middle" font-family="monospace" font-size="6" fill="#90FF60">Valle del Saber</text>
-<rect x="345" y="413" width="150" height="16" rx="8" fill="#000" stroke="#D4A030" stroke-width="2.5"/>
-<rect x="347" y="415" width="146" height="12" rx="6" fill="#7A4808"/>
-<text x="420" y="425" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#FFD070">Altiplano Epid.</text>
-
-<!-- === MID-WEST BIOME: FOREST OF ILLUSION (wld 3 Selva Clinica) === -->
-<path d="M 92,290 Q 118,278 160,276 Q 210,276 248,285 Q 270,292 262,303 Q 252,312 210,312 Q 158,313 122,308 Q 88,302 92,290 Z"
-  fill="url(#cliff1)" stroke="#5A2800" stroke-width="2"/>
-<path d="M 95,278 Q 120,266 162,264 Q 210,264 248,273 Q 268,280 260,290 Q 250,300 208,300 Q 158,300 122,295 Q 92,290 95,278 Z"
-  fill="#F8E098"/>
-<path d="M 98,265 Q 122,253 164,251 Q 210,251 245,260 Q 262,267 254,278 Q 244,288 205,288 Q 158,289 124,284 Q 95,278 98,265 Z"
-  fill="#1A7820" stroke="#0A4010" stroke-width="2.5"/>
-<!-- Dense canopy -->
+<!-- Flowers pixel -->
 <g>
-  <ellipse cx="115" cy="238" rx="13" ry="15" fill="#228A28" stroke="#0A4010" stroke-width="0.8"/>
-  <ellipse cx="142" cy="225" rx="15" ry="17" fill="#2A9828" stroke="#0A4010" stroke-width="0.8"/>
-  <ellipse cx="175" cy="219" rx="17" ry="19" fill="#22A020" stroke="#0A4010" stroke-width="0.8"/>
-  <ellipse cx="212" cy="224" rx="15" ry="17" fill="#2A9828" stroke="#0A4010" stroke-width="0.8"/>
-  <ellipse cx="245" cy="236" rx="13" ry="15" fill="#228A28" stroke="#0A4010" stroke-width="0.8"/>
-  <ellipse cx="130" cy="258" rx="9" ry="10" fill="#1A6010"/>
-  <ellipse cx="165" cy="262" rx="10" ry="11" fill="#228A28"/>
-  <ellipse cx="200" cy="262" rx="10" ry="11" fill="#1A6010"/>
-  <ellipse cx="232" cy="260" rx="9" ry="10" fill="#228A28"/>
+  <rect x="16" y="370" width="2" height="2" fill="#F02020"/><rect x="14" y="370" width="2" height="2" fill="#F02020"/><rect x="18" y="370" width="2" height="2" fill="#F02020"/><rect x="16" y="368" width="2" height="2" fill="#F02020"/><rect x="16" y="372" width="2" height="2" fill="#FFD020"/>
+  <rect x="224" y="374" width="2" height="2" fill="#F8F8FF"/><rect x="222" y="374" width="2" height="2" fill="#F8F8FF"/><rect x="226" y="374" width="2" height="2" fill="#F8F8FF"/><rect x="224" y="372" width="2" height="2" fill="#F8F8FF"/><rect x="224" y="376" width="2" height="2" fill="#FFD020"/>
 </g>
-<!-- Pixel trees -->
-<g transform="translate(100,260)"><rect x="3" y="8" width="5" height="12" fill="#2A4808" stroke="#000" stroke-width="1"/><ellipse cx="5" cy="6" rx="9" ry="10" fill="#1A6010" stroke="#000" stroke-width="1.5"/><ellipse cx="5" cy="2" rx="7" ry="7" fill="#28900A" stroke="#000" stroke-width="1"/></g>
-<g transform="translate(250,264)"><rect x="3" y="7" width="4" height="11" fill="#2A4808" stroke="#000" stroke-width="1"/><ellipse cx="5" cy="5" rx="8" ry="9" fill="#1A6010" stroke="#000" stroke-width="1.5"/><ellipse cx="5" cy="1" rx="6" ry="6" fill="#28900A" stroke="#000" stroke-width="1"/></g>
-<!-- Small river cutting forest -->
-<path d="M152,262 Q146,278 152,292" fill="none" stroke="#5CAEE8" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
-<path d="M218,262 Q222,278 218,292" fill="none" stroke="#5CAEE8" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
-<!-- Label -->
-<rect x="118" y="313" width="132" height="16" rx="8" fill="#000" stroke="#1A7820" stroke-width="2.5"/>
-<rect x="120" y="315" width="128" height="12" rx="6" fill="#0A4010"/>
-<text x="184" y="325" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#60FF80">Selva Clinica</text>
+<!-- Label Valle -->
+<rect x="52" y="418" width="160" height="16" fill="#000"/>
+<rect x="54" y="420" width="156" height="12" fill="#206010"/>
+<rect x="54" y="420" width="156" height="2" fill="#50B020"/>
+<text x="132" y="430" text-anchor="middle" font-family="monospace" font-size="6" font-weight="bold" fill="#F0FFA0">Valle del Saber</text>
 
-<!-- === MID-EAST BIOME: CHOCOLATE FORTRESS / CIUDADELA GESTION (wld 4) === -->
-<path d="M 320,275 Q 350,262 395,260 Q 440,260 478,270 Q 498,278 490,290 Q 478,298 440,297 Q 395,298 358,293 Q 320,286 320,275 Z"
-  fill="url(#cliff2)" stroke="#5A2800" stroke-width="2"/>
-<path d="M 322,263 Q 352,250 395,248 Q 440,248 478,258 Q 497,265 490,276 Q 478,285 440,285 Q 395,286 358,281 Q 320,275 322,263 Z"
-  fill="#F8E098"/>
-<path d="M 324,250 Q 355,238 398,236 Q 440,236 478,246 Q 494,252 487,263 Q 476,273 438,273 Q 395,274 358,269 Q 322,262 324,250 Z"
-  fill="#7888B8" stroke="#384878" stroke-width="2.5"/>
-<!-- Plateau -->
+<!-- =========================================================
+     BIOMA 2 — ALTIPLANO EPID. (Donut/Chocolate-style desert SE)
+     Nodos: 3(372,362) 4(415,342) 5(458,358)
+     ========================================================= -->
+<!-- Cliff back shadow -->
+<rect x="312" y="396" width="248" height="4" fill="#000000"/>
+<!-- Cliff wall banded (sand cliff) -->
+<rect x="312" y="400" width="248" height="8" fill="#B07830"/>
+<rect x="312" y="408" width="248" height="6" fill="#8A5020"/>
+<rect x="312" y="414" width="248" height="4" fill="#603810"/>
+<rect x="312" y="418" width="248" height="50" fill="#3068D8"/>
+<!-- Desert top band -->
+<rect x="312" y="392" width="248" height="4" fill="#A06830"/>
+<rect x="312" y="388" width="248" height="4" fill="#D89860"/>
+<!-- Sand plateau -->
+<rect x="312" y="340" width="248" height="52" fill="#E8C078"/>
+<!-- Sand texture dots -->
+<g fill="#B88030">
+  <rect x="318" y="350" width="2" height="2"/><rect x="334" y="360" width="2" height="2"/><rect x="348" y="348" width="2" height="2"/><rect x="388" y="354" width="2" height="2"/>
+  <rect x="432" y="352" width="2" height="2"/><rect x="446" y="360" width="2" height="2"/><rect x="478" y="352" width="2" height="2"/><rect x="494" y="358" width="2" height="2"/>
+  <rect x="510" y="364" width="2" height="2"/><rect x="538" y="358" width="2" height="2"/>
+</g>
+<g fill="#FFE8A0">
+  <rect x="322" y="358" width="2" height="2"/><rect x="340" y="354" width="2" height="2"/><rect x="400" y="362" width="2" height="2"/><rect x="440" y="348" width="2" height="2"/>
+  <rect x="484" y="362" width="2" height="2"/><rect x="520" y="354" width="2" height="2"/>
+</g>
+<!-- Camino arena -->
+<path d="M 316,380 L 344,376 L 372,370 L 395,356 L 415,348 L 440,352 L 458,362 L 490,374 L 556,382"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 316,380 L 344,376 L 372,370 L 395,356 L 415,348 L 440,352 L 458,362 L 490,374 L 556,382"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Pyramid pixel -->
+<g transform="translate(336,334)">
+  <rect x="18" y="0" width="4" height="4" fill="#A06828"/>
+  <rect x="14" y="4" width="12" height="4" fill="#A06828"/>
+  <rect x="10" y="8" width="20" height="4" fill="#A06828"/>
+  <rect x="6" y="12" width="28" height="4" fill="#A06828"/>
+  <rect x="2" y="16" width="36" height="4" fill="#A06828"/>
+  <rect x="0" y="20" width="40" height="4" fill="#8A5020"/>
+  <rect x="0" y="0" width="2" height="24" fill="none"/>
+  <rect x="16" y="4" width="2" height="4" fill="#D0A050"/>
+  <rect x="12" y="8" width="2" height="4" fill="#D0A050"/>
+  <rect x="8" y="12" width="2" height="4" fill="#D0A050"/>
+  <rect x="4" y="16" width="2" height="4" fill="#D0A050"/>
+  <rect x="2" y="20" width="2" height="4" fill="#D0A050"/>
+  <rect x="20" y="0" width="2" height="4" fill="#603810"/>
+  <rect x="18" y="20" width="4" height="4" fill="#3A1808"/>
+</g>
+<!-- Cacti pixel -->
 <g>
-  <ellipse cx="345" cy="226" rx="18" ry="9" fill="#8898C8"/>
-  <ellipse cx="385" cy="220" rx="22" ry="11" fill="#90A0D0"/>
-  <ellipse cx="425" cy="218" rx="22" ry="11" fill="#8898C8"/>
-  <ellipse cx="463" cy="224" rx="18" ry="9" fill="#90A0D0"/>
+  <g transform="translate(328,350)"><rect x="4" y="0" width="4" height="16" fill="#50A028"/><rect x="0" y="6" width="4" height="8" fill="#50A028"/><rect x="8" y="4" width="4" height="8" fill="#50A028"/><rect x="4" y="0" width="2" height="2" fill="#78D040"/><rect x="0" y="6" width="2" height="2" fill="#78D040"/></g>
+  <g transform="translate(388,348)"><rect x="4" y="0" width="4" height="14" fill="#50A028"/><rect x="0" y="5" width="4" height="6" fill="#50A028"/><rect x="4" y="0" width="2" height="2" fill="#78D040"/></g>
+  <g transform="translate(478,352)"><rect x="4" y="0" width="4" height="14" fill="#50A028"/><rect x="8" y="4" width="4" height="8" fill="#50A028"/><rect x="4" y="0" width="2" height="2" fill="#78D040"/><rect x="8" y="4" width="2" height="2" fill="#78D040"/></g>
+  <g transform="translate(536,352)"><rect x="4" y="0" width="4" height="14" fill="#50A028"/><rect x="0" y="5" width="4" height="6" fill="#50A028"/><rect x="4" y="0" width="2" height="2" fill="#78D040"/></g>
 </g>
-<!-- Fortress with watchtowers + banner -->
-<g transform="translate(378,218)">
-  <rect x="0" y="18" width="44" height="28" fill="#808898" stroke="#000" stroke-width="2"/>
-  <rect x="6" y="8" width="13" height="18" fill="#707888" stroke="#000" stroke-width="1.5"/>
-  <rect x="25" y="10" width="13" height="16" fill="#707888" stroke="#000" stroke-width="1.5"/>
-  <rect x="0" y="14" width="5" height="6" fill="#707888"/>
-  <rect x="9" y="14" width="5" height="6" fill="#707888"/>
-  <rect x="30" y="14" width="5" height="6" fill="#707888"/>
-  <rect x="39" y="14" width="5" height="6" fill="#707888"/>
-  <rect x="18" y="25" width="8" height="21" fill="#3A2808"/>
-  <rect x="4" y="30" width="6" height="12" fill="#A0A8B8" stroke="#000" stroke-width="1"/>
-  <rect x="34" y="30" width="6" height="12" fill="#A0A8B8" stroke="#000" stroke-width="1"/>
-  <!-- Banner -->
-  <rect x="12" y="0" width="2" height="10" fill="#5A4020"/>
-  <polygon points="14,0 24,3 14,6" fill="#C04040" stroke="#000" stroke-width="0.5"/>
-</g>
-<!-- Label -->
-<rect x="331" y="298" width="140" height="16" rx="8" fill="#000" stroke="#7888B8" stroke-width="2.5"/>
-<rect x="333" y="300" width="136" height="12" rx="6" fill="#283858"/>
-<text x="401" y="310" text-anchor="middle" font-family="monospace" font-size="5" fill="#A0B0FF">Ciudadela Gestion</text>
+<!-- Label Altiplano -->
+<rect x="345" y="418" width="150" height="16" fill="#000"/>
+<rect x="347" y="420" width="146" height="12" fill="#7A4808"/>
+<rect x="347" y="420" width="146" height="2" fill="#B08848"/>
+<text x="420" y="430" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold" fill="#FFD890">Altiplano Epid.</text>
 
-<!-- === NW BIOME: VALLEY OF MYSTERY / SANTUARIO ETICO (wld 5) === -->
-<path d="M 96,160 Q 122,148 168,146 Q 214,146 245,155 Q 262,163 254,173 Q 244,181 208,181 Q 158,182 124,177 Q 90,170 96,160 Z"
-  fill="#7040A8" stroke="#3A1860" stroke-width="2.5"/>
-<path d="M 98,150 Q 124,138 170,136 Q 214,136 245,145 Q 260,153 252,163 Q 242,171 206,171 Q 156,172 122,167 Q 88,160 98,150 Z"
-  fill="#9868D8" stroke="#501890" stroke-width="2.5"/>
-<!-- Mystic mist clouds above -->
-<g fill="#B080F0" opacity="0.85" stroke="#8050C0" stroke-width="0.8">
-  <ellipse cx="118" cy="110" rx="16" ry="8"/>
-  <ellipse cx="152" cy="102" rx="20" ry="10"/>
-  <ellipse cx="195" cy="98" rx="22" ry="11"/>
-  <ellipse cx="238" cy="106" rx="18" ry="9"/>
+<!-- =========================================================
+     BIOMA 3 — SELVA CLINICA (Forest of Illusion, centre-west)
+     Nodos: 6(142,256) 7(180,238) 8(222,252) 9(185,272)
+     Densidad de arboles pixel cubriendo todo el plateau
+     ========================================================= -->
+<!-- Cliff shadow -->
+<rect x="88" y="298" width="184" height="4" fill="#000"/>
+<!-- Cliff wall -->
+<rect x="88" y="302" width="184" height="6" fill="#B07830"/>
+<rect x="88" y="308" width="184" height="5" fill="#8A5020"/>
+<rect x="88" y="313" width="184" height="3" fill="#603810"/>
+<!-- Grass border -->
+<rect x="88" y="294" width="184" height="4" fill="#2A7010"/>
+<rect x="88" y="290" width="184" height="4" fill="#50B020"/>
+<!-- Forest plateau (green darker) -->
+<rect x="88" y="216" width="184" height="74" fill="#68D028"/>
+<!-- Dense mini-tree canopy (forest of illusion) - rows offset -->
+<g>
+  <!-- row 1 (top) -->
+  <g transform="translate(96,218)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(108,220)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(120,218)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(132,222)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(156,218)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(200,218)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(212,220)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(240,220)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(252,222)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(264,220)"><rect x="0" y="0" width="6" height="6" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <!-- row 2 -->
+  <g transform="translate(94,230)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(106,232)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(118,230)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(202,230)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(240,232)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(252,230)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(264,232)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <!-- row 3 (middle - around path) -->
+  <g transform="translate(96,244)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(108,246)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(122,244)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(240,244)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(252,246)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(264,244)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <!-- row 4 (bottom) -->
+  <g transform="translate(92,260)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(106,262)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(118,260)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(240,260)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(252,262)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(264,260)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <!-- row 5 (edge) -->
+  <g transform="translate(92,276)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(106,278)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(240,278)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
+  <g transform="translate(252,276)"><rect x="0" y="0" width="6" height="7" fill="#186010"/><rect x="1" y="-2" width="4" height="2" fill="#28900A"/></g>
 </g>
-<!-- Floating stars/crystals -->
-<circle cx="128" cy="132" r="2.5" fill="#FFD700" stroke="#000" stroke-width="0.7"/>
-<circle cx="218" cy="128" r="2.5" fill="#FFD700" stroke="#000" stroke-width="0.7"/>
-<circle cx="175" cy="156" r="2.5" fill="#FFD700" stroke="#000" stroke-width="0.7"/>
-<!-- Pagoda-style Sanctuary with side columns -->
-<g transform="translate(154,118)">
-  <!-- side columns -->
-  <rect x="-10" y="15" width="4" height="16" fill="#D0B4FF" stroke="#000" stroke-width="0.8"/>
-  <circle cx="-8" cy="15" r="2" fill="#E8D4FF" stroke="#000" stroke-width="0.6"/>
-  <rect x="36" y="15" width="4" height="16" fill="#D0B4FF" stroke="#000" stroke-width="0.8"/>
-  <circle cx="38" cy="15" r="2" fill="#E8D4FF" stroke="#000" stroke-width="0.6"/>
-  <!-- main -->
-  <rect x="0" y="13" width="30" height="20" fill="#B090E8" stroke="#000" stroke-width="2"/>
-  <polygon points="-3,13 15,-3 33,13" fill="#8050C0" stroke="#000" stroke-width="2"/>
-  <rect x="11" y="22" width="8" height="11" fill="#4A1888"/>
-  <circle cx="15" cy="6" r="4" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
-</g>
-<!-- Label -->
-<rect x="106" y="183" width="132" height="16" rx="8" fill="#000" stroke="#9868D8" stroke-width="2.5"/>
-<rect x="108" y="185" width="128" height="12" rx="6" fill="#401878"/>
-<text x="172" y="195" text-anchor="middle" font-family="monospace" font-size="5" fill="#D0A0FF">Santuario Etico</text>
+<!-- Path through forest (clearing) -->
+<path d="M 96,284 L 120,270 L 142,258 L 162,248 L 180,240 L 200,246 L 222,254 L 200,268 L 185,276 L 200,284 L 270,286"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 96,284 L 120,270 L 142,258 L 162,248 L 180,240 L 200,246 L 222,254 L 200,268 L 185,276 L 200,284 L 270,286"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Small forest lake -->
+<rect x="154" y="266" width="18" height="6" fill="#000"/>
+<rect x="156" y="268" width="14" height="2" fill="#3080D8"/>
+<!-- Label Selva -->
+<rect x="116" y="316" width="132" height="16" fill="#000"/>
+<rect x="118" y="318" width="128" height="12" fill="#0A4010"/>
+<rect x="118" y="318" width="128" height="2" fill="#1A6010"/>
+<text x="182" y="328" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold" fill="#A0FFA0">Selva Clinica</text>
 
-<!-- === NE BIOME: BOWSER'S CASTLE / CIMA ENCAPS (wld 6, highest) === -->
-<!-- Mountain range (sky backdrop) -->
-<g fill="#7A5000" stroke="#4A2800" stroke-width="1.5">
-  <polygon points="318,138 338,75 358,138"/>
-  <polygon points="348,135 378,50 410,135"/>
-  <polygon points="400,132 434,40 466,132"/>
-  <polygon points="452,133 478,58 508,133"/>
+<!-- =========================================================
+     BIOMA 4 — CIUDADELA GESTION (Chocolate Fortress, centre-east)
+     Nodos: 10(362,242) 11(402,222) 12(442,238)
+     ========================================================= -->
+<!-- Cliff shadow -->
+<rect x="308" y="288" width="200" height="4" fill="#000"/>
+<!-- Cliff wall choco -->
+<rect x="308" y="292" width="200" height="6" fill="#906030"/>
+<rect x="308" y="298" width="200" height="5" fill="#684020"/>
+<rect x="308" y="303" width="200" height="3" fill="#402010"/>
+<!-- Top border grass (brown plateau) -->
+<rect x="308" y="284" width="200" height="4" fill="#604020"/>
+<rect x="308" y="280" width="200" height="4" fill="#A06030"/>
+<!-- Plateau (chocolate brown) -->
+<rect x="308" y="208" width="200" height="72" fill="#B87030"/>
+<!-- Stone tiles / rocks texture -->
+<g fill="#906028">
+  <rect x="318" y="218" width="4" height="4"/><rect x="334" y="226" width="4" height="4"/><rect x="354" y="218" width="4" height="4"/><rect x="378" y="222" width="4" height="4"/>
+  <rect x="434" y="226" width="4" height="4"/><rect x="462" y="222" width="4" height="4"/><rect x="478" y="232" width="4" height="4"/><rect x="498" y="220" width="4" height="4"/>
+  <rect x="320" y="260" width="4" height="4"/><rect x="342" y="254" width="4" height="4"/><rect x="382" y="264" width="4" height="4"/><rect x="468" y="258" width="4" height="4"/>
 </g>
-<!-- Snow caps -->
-<g fill="#FFFFF8" stroke="#D4D4D4" stroke-width="0.6">
-  <polygon points="335,80 338,75 341,80"/>
-  <polygon points="374,55 378,50 383,55"/>
-  <polygon points="430,45 434,40 438,45"/>
-  <polygon points="474,63 478,58 483,63"/>
+<g fill="#D89050">
+  <rect x="324" y="220" width="2" height="2"/><rect x="360" y="228" width="2" height="2"/><rect x="388" y="218" width="2" height="2"/><rect x="428" y="232" width="2" height="2"/>
+  <rect x="466" y="228" width="2" height="2"/><rect x="498" y="242" width="2" height="2"/>
 </g>
-<!-- Island base cliff -->
-<path d="M 325,152 Q 352,140 394,138 Q 440,138 478,148 Q 498,155 490,165 Q 478,171 440,171 Q 395,172 358,168 Q 322,162 325,152 Z"
-  fill="url(#cliff2)" stroke="#5A2800" stroke-width="2"/>
-<!-- Sand -->
-<path d="M 327,142 Q 352,130 394,128 Q 440,128 478,138 Q 497,145 489,155 Q 478,161 440,161 Q 395,162 358,158 Q 322,152 327,142 Z"
-  fill="#F8E098"/>
-<!-- Golden plateau -->
-<path d="M 329,130 Q 354,118 396,116 Q 440,116 478,126 Q 494,133 486,143 Q 476,151 438,151 Q 395,152 358,148 Q 325,141 329,130 Z"
-  fill="#E8C030" stroke="#907008" stroke-width="2.5"/>
-<!-- Bowser's Castle - dark with lava windows + big flag -->
-<g transform="translate(396,80)">
-  <!-- lava pool front -->
-  <ellipse cx="22" cy="60" rx="28" ry="5" fill="#F86020" opacity="0.6"/>
-  <ellipse cx="22" cy="60" rx="22" ry="3" fill="#FFA040" opacity="0.8"/>
-  <!-- base -->
-  <rect x="0" y="20" width="44" height="32" fill="#484848" stroke="#000" stroke-width="2"/>
+<!-- Camino -->
+<path d="M 316,270 L 340,258 L 362,248 L 386,232 L 402,228 L 422,230 L 442,244 L 474,260 L 500,270"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 316,270 L 340,258 L 362,248 L 386,232 L 402,228 L 422,230 L 442,244 L 474,260 L 500,270"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Fortress (pixel blocks) -->
+<g transform="translate(382,214)">
+  <rect x="0" y="12" width="40" height="22" fill="#000"/>
+  <rect x="2" y="14" width="36" height="18" fill="#808088"/>
+  <!-- brick pattern -->
+  <rect x="2" y="16" width="36" height="1" fill="#404048"/>
+  <rect x="2" y="22" width="36" height="1" fill="#404048"/>
+  <rect x="2" y="28" width="36" height="1" fill="#404048"/>
+  <rect x="10" y="17" width="1" height="5" fill="#404048"/>
+  <rect x="22" y="17" width="1" height="5" fill="#404048"/>
+  <rect x="30" y="17" width="1" height="5" fill="#404048"/>
+  <rect x="6" y="23" width="1" height="5" fill="#404048"/>
+  <rect x="16" y="23" width="1" height="5" fill="#404048"/>
+  <rect x="28" y="23" width="1" height="5" fill="#404048"/>
   <!-- towers -->
-  <rect x="6" y="8" width="14" height="22" fill="#383838" stroke="#000" stroke-width="1.5"/>
-  <rect x="24" y="10" width="14" height="20" fill="#383838" stroke="#000" stroke-width="1.5"/>
+  <rect x="2" y="2" width="10" height="14" fill="#000"/>
+  <rect x="4" y="4" width="6" height="12" fill="#606068"/>
+  <rect x="28" y="2" width="10" height="14" fill="#000"/>
+  <rect x="30" y="4" width="6" height="12" fill="#606068"/>
   <!-- crenellations -->
-  <rect x="0" y="16" width="5" height="6" fill="#383838"/>
-  <rect x="10" y="16" width="5" height="6" fill="#383838"/>
-  <rect x="28" y="16" width="5" height="6" fill="#383838"/>
-  <rect x="39" y="16" width="5" height="6" fill="#383838"/>
+  <rect x="4" y="4" width="2" height="3" fill="#000"/>
+  <rect x="8" y="4" width="2" height="3" fill="#000"/>
+  <rect x="30" y="4" width="2" height="3" fill="#000"/>
+  <rect x="34" y="4" width="2" height="3" fill="#000"/>
+  <!-- wall crenellations -->
+  <rect x="2" y="14" width="2" height="2" fill="#000"/>
+  <rect x="6" y="14" width="2" height="2" fill="#000"/>
+  <rect x="14" y="14" width="2" height="2" fill="#000"/>
+  <rect x="24" y="14" width="2" height="2" fill="#000"/>
+  <rect x="36" y="14" width="2" height="2" fill="#000"/>
   <!-- gate -->
-  <rect x="18" y="32" width="8" height="20" fill="#2A1808"/>
-  <polygon points="18,32 22,28 26,32" fill="#2A1808"/>
-  <!-- lava windows (glow) -->
-  <rect x="10" y="38" width="4" height="4" fill="#F86020"/>
-  <rect x="30" y="38" width="4" height="4" fill="#F86020"/>
-  <rect x="10" y="46" width="4" height="3" fill="#F86020"/>
-  <rect x="30" y="46" width="4" height="3" fill="#F86020"/>
-  <!-- flagpoles + big red flags -->
-  <rect x="12" y="-14" width="2" height="22" fill="#2A2A2A"/>
-  <polygon points="14,-14 32,-10 14,-4" fill="#D02020" stroke="#000" stroke-width="1"/>
-  <rect x="30" y="-12" width="2" height="18" fill="#2A2A2A"/>
-  <polygon points="32,-12 47,-8 32,-3" fill="#E83020" stroke="#000" stroke-width="1"/>
+  <rect x="17" y="22" width="6" height="12" fill="#000"/>
+  <rect x="18" y="23" width="4" height="11" fill="#3A1808"/>
+  <!-- windows -->
+  <rect x="5" y="8" width="4" height="4" fill="#000"/>
+  <rect x="6" y="9" width="2" height="2" fill="#FFD020"/>
+  <rect x="31" y="8" width="4" height="4" fill="#000"/>
+  <rect x="32" y="9" width="2" height="2" fill="#FFD020"/>
+  <!-- flag -->
+  <rect x="19" y="-6" width="2" height="10" fill="#3A2808"/>
+  <rect x="21" y="-6" width="10" height="2" fill="#C02020"/>
+  <rect x="21" y="-4" width="8" height="2" fill="#E82020"/>
 </g>
-<!-- Label -->
-<rect x="346" y="175" width="146" height="16" rx="8" fill="#000" stroke="#E8C030" stroke-width="2.5"/>
-<rect x="348" y="177" width="142" height="12" rx="6" fill="#806008"/>
-<text x="419" y="187" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#FFE840">Cima ENCAPS</text>
+<!-- Label Ciudadela -->
+<rect x="329" y="302" width="140" height="16" fill="#000"/>
+<rect x="331" y="304" width="136" height="12" fill="#283858"/>
+<rect x="331" y="304" width="136" height="2" fill="#405870"/>
+<text x="399" y="314" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold" fill="#C0D0FF">Ciudadela Gestion</text>
 
-<!-- === WOODEN BRIDGES conectando islas === -->
-<!-- Bridge south-continent -> Selva (vertical) -->
-<g><rect x="173" y="285" width="10" height="36" fill="#A06828" stroke="#000" stroke-width="1"/>
-  <line x1="173" y1="292" x2="183" y2="292" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="173" y1="300" x2="183" y2="300" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="173" y1="308" x2="183" y2="308" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="173" y1="316" x2="183" y2="316" stroke="#5A2800" stroke-width="0.9"/></g>
-<!-- Bridge south -> Ciudadela -->
-<g><rect x="393" y="275" width="10" height="38" fill="#A06828" stroke="#000" stroke-width="1"/>
-  <line x1="393" y1="283" x2="403" y2="283" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="393" y1="291" x2="403" y2="291" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="393" y1="299" x2="403" y2="299" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="393" y1="307" x2="403" y2="307" stroke="#5A2800" stroke-width="0.9"/></g>
-<!-- Bridge Selva -> Santuario -->
-<g><rect x="167" y="199" width="10" height="42" fill="#A06828" stroke="#000" stroke-width="1"/>
-  <line x1="167" y1="207" x2="177" y2="207" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="167" y1="217" x2="177" y2="217" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="167" y1="227" x2="177" y2="227" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="167" y1="237" x2="177" y2="237" stroke="#5A2800" stroke-width="0.9"/></g>
-<!-- Bridge Ciudadela -> Cima -->
-<g><rect x="400" y="188" width="10" height="42" fill="#A06828" stroke="#000" stroke-width="1"/>
-  <line x1="400" y1="196" x2="410" y2="196" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="400" y1="206" x2="410" y2="206" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="400" y1="216" x2="410" y2="216" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="400" y1="226" x2="410" y2="226" stroke="#5A2800" stroke-width="0.9"/></g>
-<!-- Bridge Santuario -> Cima (horizontal top) -->
-<g><rect x="255" y="118" width="70" height="6" fill="#A06828" stroke="#000" stroke-width="1"/>
-  <line x1="268" y1="118" x2="268" y2="124" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="283" y1="118" x2="283" y2="124" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="298" y1="118" x2="298" y2="124" stroke="#5A2800" stroke-width="0.9"/>
-  <line x1="313" y1="118" x2="313" y2="124" stroke="#5A2800" stroke-width="0.9"/></g>
+<!-- =========================================================
+     BIOMA 5 — SANTUARIO ETICO (Valley of Bowser, NW - purple)
+     Nodos: 13(138,132) 14(175,112) 15(215,128)
+     ========================================================= -->
+<!-- Cliff shadow -->
+<rect x="84" y="180" width="180" height="4" fill="#000"/>
+<!-- Cliff wall purple -->
+<rect x="84" y="184" width="180" height="6" fill="#704090"/>
+<rect x="84" y="190" width="180" height="5" fill="#502868"/>
+<rect x="84" y="195" width="180" height="3" fill="#301850"/>
+<!-- Top border -->
+<rect x="84" y="176" width="180" height="4" fill="#502870"/>
+<rect x="84" y="172" width="180" height="4" fill="#9050C0"/>
+<!-- Plateau purple -->
+<rect x="84" y="100" width="180" height="72" fill="#A060D8"/>
+<!-- Texture dots -->
+<g fill="#8040B0">
+  <rect x="94" y="110" width="2" height="2"/><rect x="112" y="124" width="2" height="2"/><rect x="128" y="118" width="2" height="2"/><rect x="154" y="130" width="2" height="2"/>
+  <rect x="196" y="120" width="2" height="2"/><rect x="226" y="130" width="2" height="2"/><rect x="242" y="112" width="2" height="2"/><rect x="256" y="122" width="2" height="2"/>
+  <rect x="96" y="148" width="2" height="2"/><rect x="124" y="152" width="2" height="2"/><rect x="186" y="148" width="2" height="2"/><rect x="248" y="148" width="2" height="2"/>
+</g>
+<g fill="#D8A0F8">
+  <rect x="102" y="116" width="2" height="2"/><rect x="148" y="110" width="2" height="2"/><rect x="196" y="144" width="2" height="2"/><rect x="228" y="116" width="2" height="2"/>
+</g>
+<!-- Camino -->
+<path d="M 92,160 L 118,146 L 138,140 L 156,126 L 175,118 L 196,124 L 215,134 L 244,148 L 262,160"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 92,160 L 118,146 L 138,140 L 156,126 L 175,118 L 196,124 L 215,134 L 244,148 L 262,160"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Sparkle stars pixel -->
+<g>
+  <g transform="translate(108,108)"><rect x="2" y="0" width="2" height="6" fill="#FFE840"/><rect x="0" y="2" width="6" height="2" fill="#FFE840"/></g>
+  <g transform="translate(236,108)"><rect x="2" y="0" width="2" height="6" fill="#FFE840"/><rect x="0" y="2" width="6" height="2" fill="#FFE840"/></g>
+  <g transform="translate(94,138)"><rect x="1" y="0" width="2" height="4" fill="#FFE840"/><rect x="0" y="1" width="4" height="2" fill="#FFE840"/></g>
+  <g transform="translate(254,130)"><rect x="1" y="0" width="2" height="4" fill="#FFE840"/><rect x="0" y="1" width="4" height="2" fill="#FFE840"/></g>
+</g>
+<!-- Pagoda sanctuary -->
+<g transform="translate(160,100)">
+  <!-- columns pixel -->
+  <rect x="-10" y="14" width="4" height="14" fill="#000"/>
+  <rect x="-9" y="15" width="2" height="12" fill="#E0B0FF"/>
+  <rect x="36" y="14" width="4" height="14" fill="#000"/>
+  <rect x="37" y="15" width="2" height="12" fill="#E0B0FF"/>
+  <!-- main body -->
+  <rect x="0" y="10" width="30" height="20" fill="#000"/>
+  <rect x="2" y="12" width="26" height="16" fill="#B888E8"/>
+  <rect x="2" y="12" width="26" height="2" fill="#D8A8F8"/>
+  <!-- roof (stepped) -->
+  <rect x="-4" y="8" width="38" height="4" fill="#000"/>
+  <rect x="-2" y="8" width="34" height="2" fill="#7040A0"/>
+  <rect x="2" y="4" width="26" height="4" fill="#000"/>
+  <rect x="4" y="4" width="22" height="2" fill="#7040A0"/>
+  <rect x="6" y="0" width="18" height="4" fill="#000"/>
+  <rect x="8" y="0" width="14" height="2" fill="#7040A0"/>
+  <!-- door -->
+  <rect x="11" y="20" width="8" height="10" fill="#000"/>
+  <rect x="12" y="21" width="6" height="9" fill="#FFD020"/>
+  <rect x="14" y="23" width="2" height="2" fill="#F86020"/>
+</g>
+<!-- Label Santuario -->
+<rect x="104" y="202" width="132" height="16" fill="#000"/>
+<rect x="106" y="204" width="128" height="12" fill="#401878"/>
+<rect x="106" y="204" width="128" height="2" fill="#6030A0"/>
+<text x="170" y="214" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold" fill="#E8B0FF">Santuario Etico</text>
 
-<!-- === DECORATIVE DOTTED PATHS entre biomas (sobre puentes) === -->
-<path d="M 240,375 Q 290,365 330,370" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 240,375 Q 290,365 330,370" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 400,320 Q 400,295 395,272" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 400,320 Q 400,295 395,272" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 175,322 Q 178,295 180,270" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 175,322 Q 178,295 180,270" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 283,248 Q 315,240 325,238" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 283,248 Q 315,240 325,238" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 175,200 Q 170,170 168,158" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 175,200 Q 170,170 168,158" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 400,185 Q 400,158 405,138" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 400,185 Q 400,158 405,138" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
-<path d="M 255,122 Q 305,112 320,110" fill="none" stroke="#B88820" stroke-width="6" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.9"/>
-<path d="M 255,122 Q 305,112 320,110" fill="none" stroke="#FFD040" stroke-width="3" stroke-dasharray="5,6" stroke-linecap="round" opacity="0.7"/>
+<!-- =========================================================
+     BIOMA 6 — CIMA ENCAPS (Bowser's Castle NE + mountains)
+     Nodos: 16(372,108) 17(414,88) 18(455,104)
+     ========================================================= -->
+<!-- Cliff shadow -->
+<rect x="304" y="180" width="212" height="4" fill="#000"/>
+<!-- Cliff wall dark stone -->
+<rect x="304" y="184" width="212" height="6" fill="#805840"/>
+<rect x="304" y="190" width="212" height="5" fill="#503820"/>
+<rect x="304" y="195" width="212" height="3" fill="#281808"/>
+<!-- Top border golden -->
+<rect x="304" y="176" width="212" height="4" fill="#806010"/>
+<rect x="304" y="172" width="212" height="4" fill="#C89020"/>
+<!-- Golden plateau (ominous) -->
+<rect x="304" y="100" width="212" height="72" fill="#D8A040"/>
+<!-- Lava cracks texture -->
+<g fill="#8A5010">
+  <rect x="314" y="118" width="2" height="2"/><rect x="336" y="130" width="2" height="2"/><rect x="356" y="124" width="2" height="2"/><rect x="488" y="126" width="2" height="2"/>
+  <rect x="506" y="140" width="2" height="2"/><rect x="320" y="152" width="2" height="2"/><rect x="478" y="148" width="2" height="2"/>
+</g>
+<g fill="#F8C048">
+  <rect x="308" y="130" width="2" height="2"/><rect x="348" y="118" width="2" height="2"/><rect x="498" y="118" width="2" height="2"/><rect x="510" y="152" width="2" height="2"/>
+</g>
+<!-- Camino a castillo -->
+<path d="M 312,160 L 340,148 L 372,120 L 392,100 L 414,94 L 436,96 L 455,112 L 478,130 L 510,148"
+      fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 312,160 L 340,148 L 372,120 L 392,100 L 414,94 L 436,96 L 455,112 L 478,130 L 510,148"
+      fill="none" stroke="#F8F0C0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Lava pool in front of castle -->
+<rect x="394" y="88" width="44" height="6" fill="#000"/>
+<rect x="396" y="89" width="40" height="4" fill="#F84010"/>
+<rect x="398" y="90" width="36" height="2" fill="#FFA030"/>
+<rect x="404" y="91" width="4" height="1" fill="#FFE860"/>
+<rect x="422" y="91" width="6" height="1" fill="#FFE860"/>
+<!-- Bowser's Castle (pixel SMW-style) -->
+<g transform="translate(396,50)">
+  <!-- Base -->
+  <rect x="0" y="16" width="44" height="28" fill="#000"/>
+  <rect x="2" y="18" width="40" height="24" fill="#484848"/>
+  <!-- brick pattern -->
+  <rect x="2" y="20" width="40" height="1" fill="#282828"/>
+  <rect x="2" y="26" width="40" height="1" fill="#282828"/>
+  <rect x="2" y="32" width="40" height="1" fill="#282828"/>
+  <rect x="2" y="38" width="40" height="1" fill="#282828"/>
+  <rect x="10" y="21" width="1" height="5" fill="#282828"/>
+  <rect x="22" y="21" width="1" height="5" fill="#282828"/>
+  <rect x="34" y="21" width="1" height="5" fill="#282828"/>
+  <rect x="6" y="27" width="1" height="5" fill="#282828"/>
+  <rect x="18" y="27" width="1" height="5" fill="#282828"/>
+  <rect x="30" y="27" width="1" height="5" fill="#282828"/>
+  <rect x="10" y="33" width="1" height="5" fill="#282828"/>
+  <rect x="22" y="33" width="1" height="5" fill="#282828"/>
+  <rect x="34" y="33" width="1" height="5" fill="#282828"/>
+  <!-- Towers -->
+  <rect x="4" y="2" width="12" height="18" fill="#000"/>
+  <rect x="6" y="4" width="8" height="16" fill="#383838"/>
+  <rect x="28" y="2" width="12" height="18" fill="#000"/>
+  <rect x="30" y="4" width="8" height="16" fill="#383838"/>
+  <!-- Crenellations tower -->
+  <rect x="6" y="4" width="2" height="3" fill="#000"/>
+  <rect x="10" y="4" width="2" height="3" fill="#000"/>
+  <rect x="30" y="4" width="2" height="3" fill="#000"/>
+  <rect x="34" y="4" width="2" height="3" fill="#000"/>
+  <!-- Crenellations wall -->
+  <rect x="2" y="18" width="2" height="2" fill="#000"/>
+  <rect x="6" y="18" width="2" height="2" fill="#000"/>
+  <rect x="14" y="18" width="2" height="2" fill="#000"/>
+  <rect x="28" y="18" width="2" height="2" fill="#000"/>
+  <rect x="36" y="18" width="2" height="2" fill="#000"/>
+  <rect x="40" y="18" width="2" height="2" fill="#000"/>
+  <!-- Lava windows towers -->
+  <rect x="8" y="8" width="4" height="4" fill="#000"/>
+  <rect x="9" y="9" width="2" height="2" fill="#F86020"/>
+  <rect x="32" y="8" width="4" height="4" fill="#000"/>
+  <rect x="33" y="9" width="2" height="2" fill="#F86020"/>
+  <!-- Lava windows wall -->
+  <rect x="6" y="28" width="3" height="3" fill="#000"/>
+  <rect x="7" y="29" width="1" height="1" fill="#F86020"/>
+  <rect x="35" y="28" width="3" height="3" fill="#000"/>
+  <rect x="36" y="29" width="1" height="1" fill="#F86020"/>
+  <!-- Main gate -->
+  <rect x="17" y="28" width="10" height="16" fill="#000"/>
+  <rect x="18" y="30" width="8" height="14" fill="#2A1808"/>
+  <rect x="22" y="30" width="2" height="14" fill="#4A2808"/>
+  <!-- Red flags big -->
+  <rect x="9" y="-10" width="2" height="14" fill="#000"/>
+  <rect x="11" y="-10" width="10" height="2" fill="#C02020"/>
+  <rect x="11" y="-8" width="8" height="2" fill="#E82020"/>
+  <rect x="11" y="-6" width="6" height="2" fill="#C02020"/>
+  <rect x="33" y="-10" width="2" height="14" fill="#000"/>
+  <rect x="35" y="-10" width="10" height="2" fill="#C02020"/>
+  <rect x="35" y="-8" width="8" height="2" fill="#E82020"/>
+  <rect x="35" y="-6" width="6" height="2" fill="#C02020"/>
+</g>
+<!-- Label Cima -->
+<rect x="346" y="202" width="146" height="16" fill="#000"/>
+<rect x="348" y="204" width="142" height="12" fill="#806008"/>
+<rect x="348" y="204" width="142" height="2" fill="#B08818"/>
+<text x="419" y="214" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold" fill="#FFE840">Cima ENCAPS</text>
+
+<!-- =========================================================
+     WOODEN BRIDGES PIXEL (conectando islas sobre el mar)
+     ========================================================= -->
+<!-- Valle -> Selva -->
+<g>
+  <rect x="170" y="295" width="14" height="44" fill="#000"/>
+  <rect x="172" y="297" width="10" height="40" fill="#A06830"/>
+  <rect x="172" y="301" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="309" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="317" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="325" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="333" width="10" height="2" fill="#603810"/>
+</g>
+<!-- Altiplano -> Ciudadela -->
+<g>
+  <rect x="396" y="287" width="14" height="48" fill="#000"/>
+  <rect x="398" y="289" width="10" height="44" fill="#A06830"/>
+  <rect x="398" y="293" width="10" height="2" fill="#603810"/>
+  <rect x="398" y="301" width="10" height="2" fill="#603810"/>
+  <rect x="398" y="309" width="10" height="2" fill="#603810"/>
+  <rect x="398" y="317" width="10" height="2" fill="#603810"/>
+  <rect x="398" y="325" width="10" height="2" fill="#603810"/>
+</g>
+<!-- Selva -> Santuario -->
+<g>
+  <rect x="170" y="207" width="14" height="34" fill="#000"/>
+  <rect x="172" y="209" width="10" height="30" fill="#A06830"/>
+  <rect x="172" y="213" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="221" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="229" width="10" height="2" fill="#603810"/>
+  <rect x="172" y="237" width="10" height="2" fill="#603810"/>
+</g>
+<!-- Ciudadela -> Cima -->
+<g>
+  <rect x="402" y="195" width="14" height="34" fill="#000"/>
+  <rect x="404" y="197" width="10" height="30" fill="#A06830"/>
+  <rect x="404" y="201" width="10" height="2" fill="#603810"/>
+  <rect x="404" y="209" width="10" height="2" fill="#603810"/>
+  <rect x="404" y="217" width="10" height="2" fill="#603810"/>
+  <rect x="404" y="225" width="10" height="2" fill="#603810"/>
+</g>
+<!-- Santuario -> Cima (horizontal) -->
+<g>
+  <rect x="262" y="130" width="46" height="8" fill="#000"/>
+  <rect x="264" y="132" width="42" height="4" fill="#A06830"/>
+  <rect x="270" y="132" width="2" height="4" fill="#603810"/>
+  <rect x="280" y="132" width="2" height="4" fill="#603810"/>
+  <rect x="290" y="132" width="2" height="4" fill="#603810"/>
+  <rect x="300" y="132" width="2" height="4" fill="#603810"/>
+</g>
+
+<!-- Small boats on sea (pixel) -->
+<g transform="translate(72,282)">
+  <rect x="0" y="0" width="2" height="10" fill="#2A1808"/>
+  <rect x="2" y="0" width="10" height="2" fill="#F8F8FF"/>
+  <rect x="2" y="2" width="8" height="2" fill="#F8F8FF"/>
+  <rect x="-2" y="10" width="16" height="4" fill="#000"/>
+  <rect x="0" y="10" width="12" height="2" fill="#3050A0"/>
+</g>
+<g transform="translate(296,316)">
+  <rect x="0" y="0" width="2" height="14" fill="#2A1808"/>
+  <rect x="2" y="0" width="14" height="2" fill="#F8F8FF"/>
+  <rect x="2" y="2" width="12" height="2" fill="#F8F8FF"/>
+  <rect x="2" y="4" width="10" height="2" fill="#F8F8FF"/>
+  <rect x="-2" y="14" width="20" height="4" fill="#000"/>
+  <rect x="0" y="14" width="16" height="2" fill="#3050A0"/>
+</g>
+<g transform="translate(484,174)">
+  <rect x="0" y="0" width="2" height="10" fill="#2A1808"/>
+  <rect x="2" y="0" width="10" height="2" fill="#F8F8FF"/>
+  <rect x="2" y="2" width="8" height="2" fill="#F8F8FF"/>
+  <rect x="-2" y="10" width="16" height="4" fill="#000"/>
+  <rect x="0" y="10" width="12" height="2" fill="#3050A0"/>
+</g>
 <g id="rpg-nodes"></g>
 <g id="rpg-char" style="transition:transform 0.7s cubic-bezier(.25,.1,.2,1.1)">
   <ellipse id="rpg-shadow-el" cx="14" cy="38" rx="10" ry="3" fill="rgba(0,0,0,0.35)"/>
